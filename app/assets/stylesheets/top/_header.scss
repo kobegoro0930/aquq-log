@@ -1,0 +1,25 @@
+.head-wrapper {
+  width: 1200px;
+  height: 450px;
+  background-image: url("main-view.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .header {
+    height: 58px;
+
+    .header__logo {
+      color: white;
+      height: 58px;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 22px;
+        font-weight: 600;
+        lign-height: 58px;
+      }
+    }
+  }
+}
