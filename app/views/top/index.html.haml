@@ -1,3 +1,13 @@
 .wrapper
-  = render "head-wrapper"
-  = render "body-wrapper"
+  .head-wrapper
+    = render "head-wrapper"
+  .body-wrapper
+    .main-wrapper
+      .search-by-area
+        = render "search-by-area"
+      .ranking
+        = render "ranking"
+    .side-wrapper
+      = render "side-wrapper"
+  .footer
+    footer
