@@ -3,10 +3,12 @@
     エリアから探す
   %ul
     %li.area-box
-      = image_tag '東京.jpg', :size =>'50x50'
+      = image_tag '東京.jpg', :size =>'70x70', class: "image-tokyo"
       .area-box__text
-        東京  7
-        %p 館
+        %a.area-box__text__area{ href: '#'}
+          東京
+        %a.area-box__text__value{ href: '#'}
+          7館
     %li
       神奈川
     %li

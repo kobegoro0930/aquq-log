@@ -1,1 +1,44 @@
+.search-by-area {
+  h2 {
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
 
+  ul {
+    margin-top: 22px;
+    display: flex;
+  }
+
+  .area-box {
+    width: 33%;
+    list-style: none;
+    height: 70px;
+    border: solid 1px #e1e1e1;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
+    overflow: hidden;
+    line-height: 70px;
+    background-color: white;
+    display: flex;
+
+    &__text {
+      color: black;
+      display: flex;
+
+      &__area {
+        padding-left: 20px;
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 0.8px;
+      }
+
+      &__value {
+        padding-left: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        vertical-align: baseline;
+      }
+    }
+  }
+}
