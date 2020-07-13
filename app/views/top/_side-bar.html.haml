@@ -1,16 +1,36 @@
 .side-bar
   .side-bar__head
-    .side-bar__hea__wrapper
-      .side-bar__hea__wrapper__label      
-        %i.fas.fa-map-marked-alt
+    .side-bar__head__wrapper.border
+      .side-bar__head__wrapper__label      
+        %i.fas.fa-map-marker-alt
         %p
           水族館
-      .side-bar__hea__wrapper__value
+      .side-bar__head__wrapper__value
         15
-    .side-bar__hea__wrapper
-      .side-bar__hea__wrapper__label
-        %i.fas.fa-comment
+    .side-bar__head__wrapper
+      .side-bar__head__wrapper__label
+        %i.fas.fa-comment-dots
         %p
           口コミ
-      .side-bar__hea__wrapper__value
+      .side-bar__head__wrapper__value
         34
+  .side-bar__login
+    .side-bar__login__inner
+      %h3
+        新規会員登録
+      %p.side-bar__login__inner__explain
+        ログインすると、コメントや画像の投稿、行った水族館を管理できるようになります。
+      %p.side-bar__login__inner__friendly
+        ※かんたんログインもございますので、お気軽にお試しください。
+      .side-bar__login__inner__btn
+        .side-bar__login__inner__btn__wrapper
+          %a{ href: "#" }
+            ログイン
+  .side-bar__news
+    .side-bar__news__inner
+      %h3
+        水族館ログからのお知らせ
+      %p.side-bar__news__inner__time
+        2020.06.04
+      %p.side-bar__news__inner__text
+        水族館ログ（関東）を公開しました。順次全国版へのリニューアルを行ってまいります。

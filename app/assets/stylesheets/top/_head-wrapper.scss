@@ -136,6 +136,10 @@
             outline: none;
             cursor: pointer;
           }
+
+          input:hover {
+            background-color: #26499d;
+          }
         }
       }
     }
