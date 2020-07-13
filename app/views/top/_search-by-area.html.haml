@@ -3,20 +3,46 @@
     エリアから探す
   %ul
     %li.area-box
-      = image_tag '東京.jpg', :size =>'70x70', class: "image-tokyo"
+      = image_tag 'tokyo.jpg', :size =>'69x69', class: "image-tokyo"
       .area-box__text
         %a.area-box__text__area{ href: '#'}
           東京
-        %a.area-box__text__value{ href: '#'}
-          7館
-    %li
-      神奈川
-    %li
-      千葉
-    %li
-      茨城
-    %li
-      埼玉
-    %li
-      栃木
+          %span.area-box__text__value{ href: '#'}
+            7館
+    %li.area-box.area-box--center
+      = image_tag 'kanagawa.jpg', :size =>'69x69', class: "image-tokyo"
+      .area-box__text
+        %a.area-box__text__area{ href: '#'}
+          神奈川
+          %span.area-box__text__value{ href: '#'}
+            6館
+    %li.area-box
+      = image_tag 'tiba.jpg', :size =>'69x69', class: "image-tokyo"
+      .area-box__text
+        %a.area-box__text__area{ href: '#'}
+          千葉
+          %span.area-box__text__value{ href: '#'}
+            2館
+  %ul
+    %li.area-box
+      = image_tag 'ibaraki.jpg', :size =>'69x69', class: "image-tokyo"
+      .area-box__text
+        %a.area-box__text__area{ href: '#'}
+          茨城
+          %span.area-box__text__value{ href: '#'}
+            3館
+    %li.area-box.area-box--center
+      = image_tag 'saitama.jpg', :size =>'69x69', class: "image-tokyo"
+      .area-box__text
+        %a.area-box__text__area{ href: '#'}
+          埼玉
+          %span.area-box__text__value{ href: '#'}
+            1館
+    %li.area-box
+      = image_tag 'totigi.jpg', :size =>'69x69', class: "image-tokyo"
+      .area-box__text
+        %a.area-box__text__area{ href: '#'}
+          栃木
+          %span.area-box__text__value{ href: '#'}
+            1館
 
