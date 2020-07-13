@@ -1,6 +1,11 @@
 @import "reset";
 
-@import "top/header";
+@import "top/head-wrapper";
+@import "top/body-wrapper";
+@import "top/search-by-area";
+@import "top/ranking";
+@import "top/side-bar";
+@import "top/footer";
 
 @import "font-awesome-sprockets";
 @import "font-awesome";

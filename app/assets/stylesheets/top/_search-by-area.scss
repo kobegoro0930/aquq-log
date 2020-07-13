@@ -1,0 +1,65 @@
+.search-by-area {
+  background-color: white;
+
+  h2 {
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  ul {
+    margin-top: 22px;
+    display: flex;
+  }
+
+  .area-box {
+    width: 31%;
+    list-style: none;
+    height: 70px;
+    border: solid 1px #e1e1e1;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
+    border-radius: 3px;
+    overflow: hidden;
+    line-height: 70px;
+    position: relative;
+
+    &--center {
+      margin: 0 3.5%;
+    }
+
+    img {
+      -moz-border-radius:3px;
+      -webkit-border-radius:3px;
+      border-radius:3px;
+      z-index: 1;
+      float: left;
+    }
+      
+    &__area {
+      padding-left: 20px;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 0.8px;
+      text-decoration: none;
+      color: black;
+      position: absolute;
+      left: 70px;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      float: left;
+    }
+
+    &__area:hover {
+      color: orange;
+    }
+
+    &__value {
+      padding-left: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      vertical-align: baseline;
+    }
+  }
+}
