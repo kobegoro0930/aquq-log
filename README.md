@@ -1,24 +1,89 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## DB設計 ERD
+![個人アプリ_ERD_2](https://user-images.githubusercontent.com/62911575/87666816-44bca880-c7a4-11ea-8959-0440de0b6395.png)
 
-Things you may want to cover:
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|image|string||
+### Association
+- has_many :saves, dependent: :destroy
+- has_many :groups
+- has_many :wents, dependent: :destroy
+- has_many :comments
 
-* Ruby version
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false, unique: true|
+|catchphrase|string|null: false|
+|title|string|null: false|
+|text|string|null: false|
+|area|string|null: false|
+### Association
+- belongs_to :user
+- has_many :saves
+- has_many :groups_tags
+- has_many :tags, throgh: :groups_tags
+- has_many :images
+- has_many :comments
+- has_many :wents
 
-* System dependencies
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|text|string|null: false|
+|rate|integer|null: false|
+### Association
+- belongs_to :user
+- belongs_to :group
 
-* Configuration
+## savesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :group
 
-* Database creation
+## wentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :group
 
-* Database initialization
+## tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :groups, throgh: :groups_tags
+- has_many :groups_tags
 
-* How to run the test suite
+## groups_tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|tag_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :tag
+- belongs_to :group
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
+|image|string|null: false|
+### Association
+- belongs_to :group
