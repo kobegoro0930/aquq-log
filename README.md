@@ -85,5 +85,5 @@
 |------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
 |image|string|null: false|
-### Association
+### Association 
 - belongs_to :group
