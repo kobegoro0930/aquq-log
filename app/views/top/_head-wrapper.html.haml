@@ -6,8 +6,10 @@
     .header__right-items
       %a.header__right-items__feature{ href: '#'}
         特徴と使い方
-      %a.header__right-items__login{ href: '#'}
-        ログイン
+      - if user_signed_in?
+        = link_to "ログアウト", "/users/sign_out", method: :delete, class: "header__right-items__logout"
+      - else
+        = link_to "ログイン", "/users/sign_in", class: "header__right-items__login"
   .main-copy
     %h1
       水族館探しは
