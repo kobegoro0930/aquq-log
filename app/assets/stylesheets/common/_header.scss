@@ -1,0 +1,116 @@
+.header {
+  padding: 10px 60px 10px 60px;
+  border-bottom: solid 1px lightblue;
+
+  &--top {
+    display:  flex;
+    justify-content: flex-end;
+
+    &__links {
+      height: 30px;
+      
+      a {
+        text-decoration: none;
+        vertical-align: middle;
+        font-size: 14px;
+        line-height: 30px;
+      }
+
+      &__login, &__logout {
+        padding-left: 10px;
+      }
+
+      &__feature {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: indigo;
+      font-weight: 600;
+      vertical-align: middle;
+      font-size: 22px;
+    }
+
+    .search-form {
+      margin-left: 100px;
+      height: 35px;
+      width: calc(100% - 220px);
+      border-radius: 4px;
+      border: solid 1px #e1e1e1;
+      box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.1);
+      align-items: center;
+
+      &__search-box {
+        display: flex;
+        
+
+        &__input-area {
+          height: 35px;
+          width: 250px;
+          border-right: solid 0.5px paleturquoise;
+
+          input {
+            padding-left: 20px;
+            -webkit-appearance:none;
+            border: none;
+            outline: none;
+            height: 34px;
+            width: 100%;
+            border-radius: 2px;
+          }
+          input::placeholder {
+            color: silver;
+          }
+        }
+
+        &__input-keyword {
+          height: 35px;
+          width: calc(100% - 350px);
+
+          input {
+            padding-left: 20px;
+            -webkit-appearance:none;
+            border: none;
+            outline: none;
+            height: 34px;
+            width: 100%;
+            border-radius: 2px;
+          }
+          input::placeholder {
+            color: silver;
+          }
+        }
+
+        &__submit-btn {
+
+          input{
+            height: 35px;
+            width: 100px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 0 2px 2px 0;
+            background-color: indigo;
+            -webkit-appearance:none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+          input:hover {
+            background-color: #26499d;
+          }
+        }
+        
+      }
+    }
+  }
+}

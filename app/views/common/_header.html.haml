@@ -1,0 +1,20 @@
+.header
+  .header--top
+    .header--top__links
+      = link_to "特徴と使い方", "＃", class: "header--top__links__feature"
+      - if user_signed_in?
+        = link_to "ログアウト", "/users/sign_out", method: :delete, class: "header--top__links__logout"
+      - else
+        = link_to "ログイン", "/users/sign_in", class: "header--top__links__login"
+  .header__main
+    .header__main__logo
+      %a{ href: '#'}水族館ログ
+    .search-form
+      = form_with url: '#' do |f|
+        .search-form__search-box
+          .search-form__search-box__input-area
+            = f.text_field :text, id: 'area', placeholder: 'エリア [ 例：東京 ] '
+          .search-form__search-box__input-keyword
+            = f.text_field :text, id: 'keyword', placeholder: 'キーワード [ 例：ペンギン ] '
+          .search-form__search-box__submit-btn
+            = f.submit "検  索", class: 'btn'
