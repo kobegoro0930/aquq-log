@@ -1,13 +1,13 @@
-.header
-  .header--top
-    .header--top__links
-      = link_to "特徴と使い方", "＃", class: "header--top__links__feature"
+.common-header
+  .common-header--top
+    .common-header--top__links
+      = link_to "特徴と使い方", "＃", class: "common-header--top__links__feature"
       - if user_signed_in?
-        = link_to "ログアウト", "/users/sign_out", method: :delete, class: "header--top__links__logout"
+        = link_to "ログアウト", "/users/sign_out", method: :delete, class: "common-header--top__links__logout"
       - else
-        = link_to "ログイン", "/users/sign_in", class: "header--top__links__login"
-  .header__main
-    .header__main__logo
+        = link_to "ログイン", "/users/sign_in", class: "common-header--top__links__login"
+  .common-header__main
+    .common-header__main__logo
       %a{ href: '#'}水族館ログ
     .search-form
       = form_with url: '#' do |f|
