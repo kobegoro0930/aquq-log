@@ -19,7 +19,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user|references|foreign_key: true|
 |name|string|null: false, unique: true|
 |catchphrase|string|null: false|
 |title|string|null: false|
