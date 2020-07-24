@@ -1,1 +1,25 @@
 管理者専用ページです。
+= form_for(@group) do |f|
+  %ul
+    %li
+      = f.label :水族館名
+      %br/
+      = f.text_field :name
+    %li
+      = f.label :キャッチフレーズ
+      %br/
+      = f.text_field :catchphrase
+    %li
+      = f.label :タイトル
+      %br/
+      = f.text_field :title
+    %li
+      = f.label :テキスト
+      %br/
+      = f.text_field :text
+    %li
+      = f.label :エリア
+      %br/
+      = f.text_field :area
+    %li
+      = f.submit "Save"
