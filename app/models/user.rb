@@ -9,4 +9,8 @@ class User < ApplicationRecord
   format: {
     with: /\A[a-zA-Z0-9]+\z/
   }
+
+  has_many :saves, dependent: :destroy
+  has_many :wents, dependent: :destroy
+  has_many :comments
 end
