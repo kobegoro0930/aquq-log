@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_022325) do
+ActiveRecord::Schema.define(version: 2020_07_23_072619) do
+
+  create_table "group_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_tags_on_group_id"
+    t.index ["tag_id"], name: "index_group_tags_on_tag_id"
+  end
 
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
     t.string "name", null: false
     t.string "catchphrase", null: false
     t.string "title", null: false
@@ -21,7 +29,15 @@ ActiveRecord::Schema.define(version: 2020_07_23_022325) do
     t.string "area", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_tags_on_group_id"
+    t.index ["tag_id"], name: "index_tags_on_tag_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -39,5 +55,8 @@ ActiveRecord::Schema.define(version: 2020_07_23_022325) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "groups", "users"
+  add_foreign_key "group_tags", "groups"
+  add_foreign_key "group_tags", "tags"
+  add_foreign_key "tags", "groups"
+  add_foreign_key "tags", "tags"
 end
