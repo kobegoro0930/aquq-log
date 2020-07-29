@@ -1,0 +1,19 @@
+.aquarium__head {
+  display: flex;
+
+  &--left {
+    
+    .number {
+      display: flex;
+    }
+  }
+
+  &--right {
+
+    &--top, &--middle, &--bottom {
+      display: flex;
+    }
+    
+  }
+}
+

@@ -1,1 +1,41 @@
-hello
+= render "common/header"
+
+.aquarium
+  .aquarium__head
+  
+    .aquarium__head--left
+      %p 
+        = @group.catchphrase
+      %h2
+        = @group.name
+      .aquarium__head--left--bottom
+        %p.rate
+          ☆☆☆☆☆ 4.00
+        .number
+          %i.far.fa-comment-dots
+          .number__comment
+            10 件
+          %i.far.fa-bookmark
+          .number__saved
+            3 件
+            
+    .aquarium__head--right
+      .aquarium__head--right--top
+        %i.far.fa-flag
+        .flag
+          行った
+      .aquarium__head--right--middle
+        %i.far.fa-bookmark
+        .bookmark
+          保存
+      .aquarium__head--right--bottom
+        %i.far.fa-comment-dots
+        .comment
+          口コミする
+  .aquarium__images-wrapper
+  .aquarium__explain
+.comments
+  
+
+= render "top/footer"
+
