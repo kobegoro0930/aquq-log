@@ -1,87 +1,25 @@
 .ranking
   %h2
     人気の水族館
-  .ranking__box
-    = image_tag 'tokyo.jpg', :size =>'180x180'
-    .ranking__box__detail
-      %a.ranking__box__detail__title{ href: '#'}
-        新江ノ島水族館
-      %p.ranking__box__detail__area
-        エリア：神奈川
-      %p.ranking__box__detail__rate
-        ☆☆☆☆☆ 4.00
-      .ranking__box__detail__comment-area
-        %p.ranking__box__detail__comment-area__comment
-          初めて新江ノ島水族館を訪館。混雑が予想されたので開館直前に到着し、招待券なのでチケットを購入する客の列横をすんなりと入場。館内が混む前に早めに館内を一回りしてか..
-        %p.ranking__box__detail__comment-area__member
-          by アクアリウムマン
-    = icon 'fas', 'map-marker-alt', class:"ranking__box__gone"
-    = icon 'far', 'bookmark', class:"ranking__box__save"
-  .ranking__box
-    = image_tag 'tokyo.jpg', :size =>'180x180'
-    .ranking__box__detail
-      %a.ranking__box__detail__title{ href: '#'}
-        新江ノ島水族館
-      %p.ranking__box__detail__area
-        エリア：神奈川
-      %p.ranking__box__detail__rate
-        ☆☆☆☆☆ 4.00
-      .ranking__box__detail__comment-area
-        %p.ranking__box__detail__comment-area__comment
-          初めて新江ノ島水族館を訪館。混雑が予想されたので開館直前に到着し、招待券なのでチケットを購入する客の列横をすんなりと入場。館内が混む前に早めに館内を一回りしてか..
-        %p.ranking__box__detail__comment-area__member
-          by アクアリウムマン
-    = icon 'fas', 'map-marker-alt', class:"ranking__box__gone"
-    = icon 'far', 'bookmark', class:"ranking__box__save"
-  .ranking__box
-    = image_tag 'tokyo.jpg', :size =>'180x180'
-    .ranking__box__detail
-      %a.ranking__box__detail__title{ href: '#'}
-        新江ノ島水族館
-      %p.ranking__box__detail__area
-        エリア：神奈川
-      %p.ranking__box__detail__rate
-        ☆☆☆☆☆ 4.00
-      .ranking__box__detail__comment-area
-        %p.ranking__box__detail__comment-area__comment
-          初めて新江ノ島水族館を訪館。混雑が予想されたので開館直前に到着し、招待券なのでチケットを購入する客の列横をすんなりと入場。館内が混む前に早めに館内を一回りしてか..
-        %p.ranking__box__detail__comment-area__member
-          by アクアリウムマン
-    = icon 'fas', 'map-marker-alt', class:"ranking__box__gone"
-    = icon 'far', 'bookmark', class:"ranking__box__save"
-  .ranking__box
-    = image_tag 'tokyo.jpg', :size =>'180x180'
-    .ranking__box__detail
-      %a.ranking__box__detail__title{ href: '#'}
-        新江ノ島水族館
-      %p.ranking__box__detail__area
-        エリア：神奈川
-      %p.ranking__box__detail__rate
-        ☆☆☆☆☆ 4.00
-      .ranking__box__detail__comment-area
-        %p.ranking__box__detail__comment-area__comment
-          初めて新江ノ島水族館を訪館。混雑が予想されたので開館直前に到着し、招待券なのでチケットを購入する客の列横をすんなりと入場。館内が混む前に早めに館内を一回りしてか..
-        %p.ranking__box__detail__comment-area__member
-          by アクアリウムマン
-    = icon 'fas', 'map-marker-alt', class:"ranking__box__gone"
-    = icon 'far', 'bookmark', class:"ranking__box__save"
-  .ranking__box
-    = image_tag 'tokyo.jpg', :size =>'180x180'
-    .ranking__box__detail
-      %a.ranking__box__detail__title{ href: '#'}
-        新江ノ島水族館
-      %p.ranking__box__detail__area
-        エリア：神奈川
-      %p.ranking__box__detail__rate
-        ☆☆☆☆☆ 4.00
-      .ranking__box__detail__comment-area
-        %p.ranking__box__detail__comment-area__comment
-          初めて新江ノ島水族館を訪館。混雑が予想されたので開館直前に到着し、招待券なのでチケットを購入する客の列横をすんなりと入場。館内が混む前に早めに館内を一回りしてか..
-        %p.ranking__box__detail__comment-area__member
-          by アクアリウムマン
-    = icon 'fas', 'map-marker-alt', class:"ranking__box__gone"
-    = icon 'far', 'bookmark', class:"ranking__box__save"
+  - @groups.first(5).each do |group|
+    .ranking__box
+      = image_tag 'tokyo.jpg', :size =>'180x180'
+      .ranking__box__detail
+        %a.ranking__box__detail__title{ href: '#'}
+          = group.name
+        %p.ranking__box__detail__area
+          = group.area
+        %p.ranking__box__detail__rate
+          ☆☆☆☆☆ 4.00
+        .ranking__box__detail__comment-area
+          %p.ranking__box__detail__comment-area__comment
+            初めて新江ノ島水族館を訪館。混雑が予想されたので開館直前に到着し、招待券なのでチケットを購入する客の列横をすんなりと入場。館内が混む前に早めに館内を一回りしてか..
+          %p.ranking__box__detail__comment-area__member
+            by アクアリウムマン
+      = icon 'fas', 'map-marker-alt', class:"ranking__box__gone"
+      = icon 'far', 'bookmark', class:"ranking__box__save"
+  
   .ranking__next
     .ranking__next__btn
-      %a{ href: "#" }
-        もっと見る ＞
+      = link_to "もっと見る ＞", "/groups"
+        
