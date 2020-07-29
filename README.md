@@ -19,7 +19,6 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|foreign_key: true|
 |name|string|null: false, unique: true|
 |catchphrase|string|null: false|
 |title|string|null: false|
@@ -39,7 +38,8 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|text|string|null: false|
+|title|string|null: false|
+|text|text|null: false|
 |rate|integer|null: false|
 ### Association
 - belongs_to :user
