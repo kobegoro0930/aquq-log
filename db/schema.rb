@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_101348) do
+ActiveRecord::Schema.define(version: 2020_08_01_051800) do
 
   create_table "group_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 2020_07_28_101348) do
     t.string "area", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_images_on_group_id"
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_101348) do
 
   add_foreign_key "group_tags", "groups"
   add_foreign_key "group_tags", "tags"
+  add_foreign_key "images", "groups"
   add_foreign_key "tags", "groups"
   add_foreign_key "tags", "tags"
 end
