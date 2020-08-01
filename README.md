@@ -83,7 +83,7 @@
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
+|group_id|refernce|foreign_key: true|
 |image|string|null: false|
 ### Association
 - belongs_to :group
