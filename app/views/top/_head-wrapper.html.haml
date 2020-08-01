@@ -1,10 +1,9 @@
 .head-wrapper
   .header
     .header__logo
-      %a{ href: '#'}水族館ログ
+      = link_to "水族館ログ", root_path
     .header__right-items
-      %a.header__right-items__feature{ href: '#'}
-        特徴と使い方
+      = link_to "特徴と使い方", new_group_path, class: "header__right-items__feature"
       - if user_signed_in?
         = link_to "ログアウト", "/users/sign_out", method: :delete, class: "header__right-items__logout"
       - else
