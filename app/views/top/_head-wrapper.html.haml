@@ -3,7 +3,7 @@
     .header__logo
       = link_to "水族館ログ", root_path
     .header__right-items
-      = link_to "特徴と使い方", new_group_path, class: "header__right-items__feature"
+      = link_to "特徴と使い方", groups_path, class: "header__right-items__feature"
       - if user_signed_in?
         = link_to "ログアウト", "/users/sign_out", method: :delete, class: "header__right-items__logout"
       - else
