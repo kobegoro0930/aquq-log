@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.order("id DESC")
+    @groups = Group.includes(:images).order('created_at DESC')
   end
 
   def new
@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(group_params)
+    # @group = Group.new(group_params)
     if @group.save
       redirect_to root_path
     else
@@ -33,14 +33,11 @@ class GroupsController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
   def group_params
-    params.require(:group).permit(
-      :name,
-      :catchphrase,
-      :title,
-      :text,
-      :area,
-    )
+    params.require(:group).permit(:name, :catchphrase, :title, :text, :area, images_attributes: [:image])
   end
 end

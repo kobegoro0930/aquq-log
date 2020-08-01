@@ -1,7 +1,5 @@
-= render "common/header"
+.group_indx
+  .group_index--new
+    = link_to "新規作成", new_group_path
 
-.groups-main
-  = render "top/ranking"
-  = render "top/side-bar"
-
-= render "top/footer"
+  = render @groups
