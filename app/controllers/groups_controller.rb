@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    4.times{@group.images.build}
   end
 
   def show
@@ -12,7 +13,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    # @group = Group.new(group_params)
+    @group = Group.new(group_params)
     if @group.save
       redirect_to root_path
     else
