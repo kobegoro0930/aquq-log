@@ -1,64 +1,76 @@
 = render "common/header"
 
-.aquarium
-  .aquarium__head
-  
-    .aquarium__head--left
-      %p 
-        = @group.catchphrase
-      %h2
-        = @group.name
-      .aquarium__head--left--bottom
-        %p.rate
-          ☆☆☆☆☆ 4.00
-        .number
-          %i.far.fa-comment-dots
-          .number__comment
-            10 件
+.groups_show-main
+
+  .aquarium
+    .aquarium__head
+      .aquarium__head--left
+        %p
+          = @group.catchphrase
+        %h2
+          = @group.name
+        .aquarium__head--left--bottom
+          %p.rate
+            ★★★★☆ 4.00
+          .number
+            %i.far.fa-comment-dots.icon
+            %span
+              10 件
+            %i.far.fa-bookmark.icon
+            %span
+              3 件
+      .aquarium__head--right
+        .aquarium__head--right--top
+          %i.far.fa-flag
+          %span
+            行った
+        .aquarium__head--right--middle
           %i.far.fa-bookmark
-          .number__saved
-            3 件
+          %span
+            保存
+        .aquarium__head--right--bottom
+          %i.far.fa-comment-dots
+          %span
+            口コミする
 
-    .aquarium__head--right
-      .aquarium__head--right--top
-        %i.far.fa-flag
-        .flag
-          行った
-      .aquarium__head--right--middle
-        %i.far.fa-bookmark
-        .bookmark
-          保存
-      .aquarium__head--right--bottom
-        %i.far.fa-comment-dots
-        .comment
-          口コミする
+    .aquarium__images-wrapper
+      .aquarium__images-wrapper__main
+        = image_tag @group.images[0].image.url, size: "600x450"
+      .aquarium__images-wrapper__sub
+        .aquarium__images-wrapper__sub--top
+          = image_tag @group.images[1].image.url, size: "184x138"
+        .aquarium__images-wrapper__sub--middle
+          = image_tag @group.images[2].image.url, size: "184x138"
+        .aquarium__images-wrapper__sub--bottom
+          = image_tag @group.images[3].image.url, size: "184x138"
 
-  .aquarium__images-wrapper
-
-  .aquarium__explain
-    %h3
-      = @group.title
-    %p
-      = @group.text
-.comments
-  %h3
-    口コミ
-  .comments__wrapper
-    .comments__wrapper__user
-      .comments__wrapper__user__image
-      .comments__wrapper__user__name
-        水族館キング
-    .comments__wrapper__comment
-      .comments__wrapper__comment__rate
-        %p.rate
-          ☆☆☆☆☆ 4.00
-      .comments__wrapper__comment__title
-        半日かけてゆっくりするのがオススメ
-      .comments__wrapper__comment__text
-        興味深い展示方法や地元にちなんだ魚の展示が良かった。 イルカショーを始めイベントも豊富で、ゆっくりと時間を掛けて観覧するのがお勧めです。 ネットで各種割引クーポンもあり、利用されると良いと思います。
-      .comments__wrapper__comment__time
-        行った時期：2020年3月
-  
+    .aquarium__explain
+      %h3
+        = @group.title
+      %p
+        = @group.text
+        
+    .aquarium-comments
+      %h3
+        口コミ
+      .aquarium-comments__wrapper
+        .aquarium-comments__wrapper__user
+          .aquarium-comments__wrapper__user__image
+          .aquarium-comments__wrapper__user__name
+            水族館キング
+        .aquarium-comments__wrapper__comment
+          .aquarium-comments__wrapper__comment__title
+            半日かけてゆっくりするのがオススメ
+          .aquarium-comments__wrapper__comment__text
+            興味深い展示方法や地元にちなんだ魚の展示が良かった。 イルカショーを始めイベントも豊富で、ゆっくりと時間を掛けて観覧するのがお勧めです。 ネットで各種割引クーポンもあり、利用されると良いと思います。
+          .aquarium-comments__wrapper__comment--bottom
+            .aquarium-comments__wrapper__comment--bottom__rate
+              %p.rate
+                ★★★★☆
+            .aquarium-comments__wrapper__comment--bottom__time
+              行った時期：2020年3月
+    
+  = render "top/side-bar"
 
 = render "top/footer"
 
