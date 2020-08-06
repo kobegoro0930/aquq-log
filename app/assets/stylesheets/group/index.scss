@@ -1,6 +1,10 @@
-.aquarium-name, .aquarium-catchphrase, .aquarium-title, .aquarium-area {
+.aquarium-name, .aquarium-catchphrase, .aquarium-title, .aquarium-area, .aquarium-images {
   width: 400px;
   margin: 20px 0;
+}
+
+.aquarium-images {
+  display: flex;
 }
 
 .aquarium-text {
@@ -8,7 +12,5 @@
   margin: 20px 0;
 }
 
-.groups-main {
-  display: flex;
-  padding: 50px 60px 0;
-}
+
+

@@ -5,8 +5,7 @@
     .ranking__box
       = image_tag 'tokyo.jpg', :size =>'180x180'
       .ranking__box__detail
-        %a.ranking__box__detail__title{ href: '#'}
-          = group.name
+        = link_to "#{group.name}", group_path(group), class: "ranking__box__detail__title"
         %p.ranking__box__detail__area
           = group.area
         %p.ranking__box__detail__rate
@@ -21,5 +20,5 @@
   
   .ranking__next
     .ranking__next__btn
-      = link_to "もっと見る ＞", "/groups"
+      = link_to "もっと見る ＞", "/scores"
         

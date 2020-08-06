@@ -1,0 +1,172 @@
+.groups_show-main {
+  display: flex;
+  padding: 50px 60px 0;
+}
+
+.aquarium__head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #e1e1e1;
+
+  &--left {
+
+    p {
+      font-size: 14px;
+    }
+
+    h2 {
+      padding: 7px 0 10px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    &--bottom {
+      display: flex;
+
+      p {
+        font-size: 22px;
+        font-weight: bold;
+        color: orange;
+      }
+    }
+    
+    .number {
+      display: flex;
+      padding: 7px 10px;
+      font-size: 12px;
+
+      .icon, span {
+        padding-left: 5px;
+      }
+    }
+  }
+
+  &--right {
+    font-size: 14px;
+    padding-right: 50px;
+
+    &--top, &--middle, &--bottom {
+      display: flex;
+      padding-bottom: 12px;
+
+      span {
+        padding-left: 5px;
+        font-weight: bold;
+      }
+    }
+    
+  }
+}
+
+.aquarium__explain {
+  margin-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: solid 1px #e1e1e1;
+
+
+  h3{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    padding-top: 11px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+.aquarium__images-wrapper {
+  display: flex;
+  padding-top: 25px;
+
+  &__main {
+    width: 600px;
+    height: 450px;
+    background-color: lightblue;
+  }
+
+  &__sub {
+    padding-left: 18px;
+
+    &--top, &--middle, &--bottom {
+      width: 184px;
+      height: 138px;
+      background-color: lightblue;
+    }
+    
+    &--top, &--middle {
+      margin-bottom: 18px;
+    }
+  }
+}
+
+.aquarium-comments {
+  padding: 25px 0;
+
+  h3 {
+    padding-bottom: 25px;
+  }
+
+  &__wrapper {
+    display: flex;
+    padding-left: 30px;
+
+    &__user {
+      padding-right: 10px;
+      background-color: lightcyan;
+      display: block;
+      width: 180px;
+      height: 110px;
+      text-align: center;
+
+      &__name {
+        font-size: 12px;
+      }
+    }
+
+    &__comment {
+      background-color: #c1ffff;
+      padding: 10px 20px;
+      margin-left: 10px;
+      position: relative;
+
+      &__title {
+        padding-bottom: 7px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      &__text {
+        padding-bottom: 10px;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      &--bottom {
+        display: flex;
+
+        &__rate {
+          font-size: 13px;
+        }
+
+        &__time {
+          font-size: 11px;
+          color: gray;
+        }
+      }
+
+    }
+
+    &__comment:before {
+      content: "";
+      position: absolute;
+      top: 30%;
+      left: -25px;
+      margin-top: -15px;
+      border: 15px solid transparent;
+      border-right: 15px solid #c1ffff;
+    }
+  }
+}

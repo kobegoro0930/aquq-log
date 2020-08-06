@@ -1,10 +1,15 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.order("id DESC")
+    @groups = Group.includes(:images).order('created_at DESC')
   end
 
   def new
     @group = Group.new
+    4.times{@group.images.build}
+  end
+
+  def show
+    @group = Group.find(params[:id])
   end
 
   def create
@@ -29,14 +34,11 @@ class GroupsController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
   def group_params
-    params.require(:group).permit(
-      :name,
-      :catchphrase,
-      :title,
-      :text,
-      :area,
-    )
+    params.require(:group).permit(:name, :catchphrase, :title, :text, :area, images_attributes: [:image])
   end
 end
