@@ -169,4 +169,14 @@
       border-right: 15px solid #c1ffff;
     }
   }
+
+  &__form {
+    padding-top: 25px;
+
+    .form {
+      &__title, &__text, &__date {
+        display: block;
+      }
+    }
+  }
 }

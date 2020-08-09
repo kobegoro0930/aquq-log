@@ -51,8 +51,7 @@
         = @group.text
         
     .aquarium-comments
-      %h3
-        口コミ
+      %h3 口コミ
       .aquarium-comments__wrapper
         .aquarium-comments__wrapper__user
           .aquarium-comments__wrapper__user__image
@@ -69,6 +68,16 @@
                 ★★★★☆
             .aquarium-comments__wrapper__comment--bottom__time
               行った時期：2020年3月
+              
+      - if current_user
+        .aquarium-comments__form
+          %h3 口コミの投稿
+          .form
+            = form_for [@group, @comment] do |f|
+              = f.text_field :title, class: 'form__title', placeholder: 'タイトルを入れてください'
+              = f.text_area :text, class: 'form__text', placeholder: '口コミ本文を入れてください'
+              = f.date_field :visit_date, class: 'form__date'
+              = f.submit '投稿', class: 'form__submit'
     
   = render "top/side-bar"
 
