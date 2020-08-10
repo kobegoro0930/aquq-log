@@ -28,10 +28,11 @@
           %i.far.fa-bookmark
           %span
             保存
-        .aquarium__head--right--bottom
-          %i.far.fa-comment-dots
-          %span
-            口コミする
+        = link_to new_group_comment_path(@group) do
+          .aquarium__head--right--bottom
+            %i.far.fa-comment-dots
+            %span
+              口コミする
 
     .aquarium__images-wrapper
       .aquarium__images-wrapper__main
@@ -51,24 +52,33 @@
         = @group.text
         
     .aquarium-comments
-      %h3
-        口コミ
-      .aquarium-comments__wrapper
-        .aquarium-comments__wrapper__user
-          .aquarium-comments__wrapper__user__image
-          .aquarium-comments__wrapper__user__name
-            水族館キング
-        .aquarium-comments__wrapper__comment
-          .aquarium-comments__wrapper__comment__title
-            半日かけてゆっくりするのがオススメ
-          .aquarium-comments__wrapper__comment__text
-            興味深い展示方法や地元にちなんだ魚の展示が良かった。 イルカショーを始めイベントも豊富で、ゆっくりと時間を掛けて観覧するのがお勧めです。 ネットで各種割引クーポンもあり、利用されると良いと思います。
-          .aquarium-comments__wrapper__comment--bottom
-            .aquarium-comments__wrapper__comment--bottom__rate
-              %p.rate
-                ★★★★☆
-            .aquarium-comments__wrapper__comment--bottom__time
-              行った時期：2020年3月
+      %h3 口コミ
+      - @comments.each do |comment|
+        - if comment.nil?
+          .comment-none
+            コメントはまだありません
+        - else
+          .aquarium-comments__wrapper
+            .aquarium-comments__wrapper__user
+              .aquarium-comments__wrapper__user__image
+              .aquarium-comments__wrapper__user__name
+                = comment.user.name
+            .aquarium-comments__wrapper__comment
+              .aquarium-comments__wrapper__comment__title
+                = comment.title
+              .aquarium-comments__wrapper__comment__text
+                = comment.text
+              .aquarium-comments__wrapper__comment--bottom
+                .aquarium-comments__wrapper__comment--bottom__rate
+                  %p.rate
+                    ★★★★☆
+                .aquarium-comments__wrapper__comment--bottom__time
+                  行った時期：#{comment.visit_date}
+                - if comment.user.id == current_user.id
+                  .aquarium-comments__wrapper__comment--bottom__edit
+                    = link_to "編集", edit_group_comment_path(group_id: @group.id, id: comment.id)
+                  .aquarium-comments__wrapper__comment--bottom__delete
+                    = link_to "削除", group_comment_path(group_id: @group.id, id: comment.id), method: :delete
     
   = render "top/side-bar"
 

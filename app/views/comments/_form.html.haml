@@ -1,0 +1,8 @@
+.aquarium-comments__form
+  %h3 口コミの投稿
+  .form
+    = form_for [@group, @comment] do |f|
+      = f.text_field :title, class: 'form__title', placeholder: 'タイトルを入れてください'
+      = f.text_area :text, class: 'form__text', placeholder: '口コミ本文を入れてください'
+      = f.date_field :visit_date, class: 'form__date'
+      = f.submit '投稿', class: 'form__submit'
