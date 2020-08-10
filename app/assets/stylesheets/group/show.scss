@@ -112,6 +112,7 @@
   &__wrapper {
     display: flex;
     padding-left: 30px;
+    margin-bottom: 25px;
 
     &__user {
       padding-right: 10px;
@@ -127,6 +128,7 @@
     }
 
     &__comment {
+      width: 100%;
       background-color: #c1ffff;
       padding: 10px 20px;
       margin-left: 10px;
@@ -146,14 +148,29 @@
 
       &--bottom {
         display: flex;
+        width: 100%;
+        position: absolute;
+        bottom: 10px;
 
         &__rate {
           font-size: 13px;
+          color: orange;
         }
 
         &__time {
+          padding-left: 20px;
           font-size: 11px;
           color: gray;
+        }
+
+        &__edit {
+          padding-left: 300px;
+          font-size: 11px;
+        }
+
+        &__delete {
+          padding-left: 10px;
+          font-size: 11px;
         }
       }
 
