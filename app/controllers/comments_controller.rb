@@ -10,11 +10,31 @@ class CommentsController < ApplicationController
     @comment = Comment.create(comment_params)
     if @comment.save
       redirect_to group_path(@comment.group.id)
-    # else
+    else
+      render :new
       # @comments = @group.comments.includes(:user)
       # flash.now[:alert] = 'メッセージを入力してください。'
       # render group_path(@group)
     end
+  end
+
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      redirect_to group_path(@comment.group.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to group_path(@comment.group.id)
   end
 
   private
@@ -26,7 +46,4 @@ class CommentsController < ApplicationController
   def set_group
     @group = Group.find(params[:group_id])
   end
-
-
-
 end
