@@ -1,4 +1,10 @@
 class CommentsController < ApplicationController
+  before_action :set_group
+
+  def new
+    @comment = Comment.new
+    @comments = @group.comments.includes(:user)
+  end
   
   def create
     @comment = Comment.create(comment_params)
@@ -16,5 +22,11 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:title, :text, :visit_date).merge(user_id: current_user.id, group_id: params[:group_id])
   end
+
+  def set_group
+    @group = Group.find(params[:group_id])
+  end
+
+
 
 end
