@@ -3,10 +3,11 @@
     .account-page__inner--left.account-page__header
       %h2 Edit Account
       %h5 アカウントの編集
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-      = link_to "トップページに戻る", root_path, class: 'btn'
+      = link_to "ログアウト", '#', class: 'btn'
+      = link_to "トップページに戻る", :back, class: 'btn'
     .account-page__inner--right.user-form
-      = form_for(current_user) do |f|
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        = devise_error_messages!
         .field
           .field-label
             = f.label :ニックネーム
@@ -17,5 +18,10 @@
             = f.label :メールアドレス
           .field-input
             = f.email_field :email
+        .field
+          .field-label
+            = f.label :アカウント画像
+          .field-input
+            = f.file_field :image
         .actions
           = f.submit "Update", class: 'btn'
