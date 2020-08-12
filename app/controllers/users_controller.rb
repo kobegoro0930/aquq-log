@@ -11,6 +11,5 @@ class UsersController < ApplicationController
 
   def set_comments
     @comments = Comment.all
-
   end
 end

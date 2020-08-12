@@ -1,4 +1,7 @@
 class GroupsController < ApplicationController
+  before_action :set_comments, only: [:index, :show]
+  before_action :set_groups, only: [:index, :show]
+  
   def index
     @groups = Group.includes(:images).order('created_at DESC')
   end
@@ -42,5 +45,13 @@ class GroupsController < ApplicationController
   private
   def group_params
     params.require(:group).permit(:name, :catchphrase, :title, :text, :area, images_attributes: [:image])
+  end
+
+  def set_comments
+    @comments = Comment.all
+  end
+
+  def set_groups
+    @groups = Group.order("id DESC")
   end
 end
