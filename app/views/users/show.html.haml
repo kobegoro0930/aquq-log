@@ -1,3 +1,38 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
-= link_to "編集", edit_user_registration_path
+= render "common/header"
+
+.user_show
+  .user_show__main
+    .user_show__main--head
+      .user_show__main--head__image
+        = image_tag @user.image.url, class: "account-image"
+      .user_show__main--head__name
+        %p
+          #{@user.name}さん
+        = link_to "▶︎ アカウントの編集", edit_user_registration_path
+    .user_show__main__navi
+      .user_show__main__navi__element
+        = link_to "#", class: "navi-link" do
+          .user_show__main__navi__element__inner
+            .navi-number
+              2
+            .navi-item
+              行った水族館
+      .user_show__main__navi__element
+        = link_to "#", class: "navi-link" do
+          .user_show__main__navi__element__inner
+            .navi-number
+              5
+            .navi-item
+              保存した水族館
+      .user_show__main__navi__element
+        = link_to "#", class: "navi-link" do
+          .user_show__main__navi__element__inner.element-last
+            .navi-number
+              2
+            .navi-item
+              口コミした数
+    = render "top/ranking"
+
+  = render "top/side-bar"
+
+= render "top/footer"
