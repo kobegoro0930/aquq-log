@@ -1,0 +1,78 @@
+.user_show {
+  display: flex;
+  padding: 50px 60px 0;
+
+  &__main {
+    width: 800px;
+
+    &--head {
+      display: flex;
+      padding-bottom: 25px;
+      border-bottom: solid 1px #dbdbff;
+
+      .account-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+      }
+
+      &__name {
+        padding: 50px 0 0 20px;
+
+        p {
+          padding-bottom: 20px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        a {
+          font-size: 12px;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline  ;
+        }
+      }
+    }
+
+    &__navi {
+      display: flex;
+      height: 65px;
+      padding: 0 100px;
+      margin-bottom: 50px;
+      border-bottom: solid 1px #dbdbff;
+
+      &__element {
+        width: 200px;
+
+        .navi-link {
+          text-decoration: none;
+          color: black;
+        }
+        
+        &__inner {
+          margin: 10px 0;
+          text-align: center;
+          border-left: solid 1px #dbdbff;
+        }
+
+        .navi-number {
+          padding-bottom: 7px;
+          font-size: 21px;
+        }
+        .navi-item {
+          font-size: 12px;
+        }
+      }
+
+      &__element:hover {
+        background-color: #f0f8ff;
+      }
+
+      .element-last {
+        border-right: solid 1px #dbdbff;
+      }
+    }
+  }
+}
