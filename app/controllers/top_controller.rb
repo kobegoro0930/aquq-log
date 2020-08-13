@@ -1,6 +1,6 @@
 class TopController < ApplicationController
   def index
-    @groups = Group.order("id DESC")
+    @groups = Group.last(5)
     @comments = Comment.all
   end
 end
