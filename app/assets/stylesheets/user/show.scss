@@ -74,5 +74,19 @@
         border-right: solid 1px #dbdbff;
       }
     }
+
+    &__title {
+      margin-bottom: 25px;
+      padding-left: 20px;
+      height: 70px;
+      background-color: #c1ffff;
+      border-top: solid 3px #dbdbff;
+      border-bottom: solid 1px #dbdbff;
+
+      h1 {
+        font-size: 22px;
+        line-height: 70px;
+      }
+    }
   }
 }

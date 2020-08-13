@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_comments
+  before_action :set_all
   
   def show
     @user = User.find(params[:id])
@@ -9,7 +9,8 @@ class UsersController < ApplicationController
 
   private
 
-  def set_comments
-    @comments = Comment.all
+  def set_all
+    @all_comments = Comment.all
+    @all_groups = Group.all
   end
 end

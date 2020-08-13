@@ -1,7 +1,14 @@
 = render "common/header"
 
 .groups-main
-  = render "top/ranking"
+  .groups-main--head
+    .groups-main--head__wrapper
+      %h1
+        人気の水族館
+      %p
+        人気水族館を口コミ評価が高い順にご紹介！
+
+    = render "common/lists"
   = render "top/side-bar"
 
 = render "top/footer"
