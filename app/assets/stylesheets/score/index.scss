@@ -1,4 +1,26 @@
 .groups-main {
   display: flex;
   padding: 50px 60px 0;
+
+  &--head {
+
+    &__wrapper {
+      margin-bottom: 25px;
+      padding-left: 20px;
+      height: 100px;
+      background-color: #c1ffff;
+      border-top: solid 3px #dbdbff;
+      border-bottom: solid 1px #dbdbff;
+
+      h1 {
+        padding-top: 25px;
+        font-size: 22px;
+      }
+
+      p {
+        padding-top: 15px;
+        font-size: 12px;
+      }
+    }
+  }
 }
