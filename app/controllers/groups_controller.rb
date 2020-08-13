@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    4.times{@group.images.build}
+    5.times{@group.images.build}
   end
 
   def show
@@ -28,6 +28,7 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
+    5.times{@group.images.build}
   end
 
   def update
@@ -40,6 +41,9 @@ class GroupsController < ApplicationController
   end
 
   def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+    redirect_to groups_path
   end
 
   private

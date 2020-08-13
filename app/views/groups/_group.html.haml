@@ -2,4 +2,5 @@
   = group.id
   = group.name
   = link_to '編集', edit_group_path(group)
+  = link_to "削除", group_path(id: group.id), method: :delete
   
