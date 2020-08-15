@@ -1,6 +1,6 @@
 - @groups.each do |group|
   .ranking__box
-    = image_tag 'tokyo.jpg', :size =>'180x180'
+    = image_tag group.images[4].image.url, :size =>'180x180'
     .ranking__box__detail
       = link_to "#{group.name}", group_path(group), class: "ranking__box__detail__title"
       %p.ranking__box__detail__area
