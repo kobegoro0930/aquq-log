@@ -4,7 +4,8 @@
   .groups-main--head
     .groups-main--head__wrapper
       %h1
-        = @groups[0].area
+        - if @group.present?
+          = @groups[0].area
         の水族館
       %p
         口コミ評価が高い順にご紹介！
