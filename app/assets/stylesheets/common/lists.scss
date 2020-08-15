@@ -1,0 +1,96 @@
+.ranking__box {
+  display: flex;
+  border-top: solid 2px #dbdbff;
+  padding: 10px 20px 10px 0;
+  position: relative;
+
+  &__detail {
+    padding-left: 20px;
+    width: 100%;
+
+    &__title {
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    &__area {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    &__rate {
+      font-size: 20px;
+      margin-top: 20px;
+      color: orange;
+      font-weight: 600;
+    }
+
+    &__comment-area {
+      margin-top: 20px;
+      background-color: lavender;
+      padding: 10px 10px;
+      height: 80px;
+      position: relative;
+
+      &__comment {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        line-height: 1.4em;
+      }
+
+      &__member {
+        font-size: 12px;
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+      }
+    }
+
+    .comment-none {
+      padding-top: 20px;
+    }
+  }
+
+  &--right {
+    display: flex;
+
+    &__gone {
+    position: absolute;
+    right: 50px;
+    font-size: 15px;
+    color: deepskyblue;
+    }
+
+    &__save {
+      position: absolute;
+      right: 10px;
+      font-size: 15px;
+      color: deepskyblue;
+    }
+
+    .explain-gone {
+      display: none;
+      font-size: 10px;
+      position: absolute;
+      right: 40px;
+      top: 30px;
+    }
+
+    .explain-save {
+      display: none;
+      font-size: 10px;
+      position: absolute;
+      right: 0px;
+      top: 30px;
+    }
+
+    &__gone:hover + .explain-gone {
+      display: block;
+    }
+
+    &__save:hover + .explain-save {
+      display: block;
+    }
+  }
+}
