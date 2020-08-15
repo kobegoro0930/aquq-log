@@ -74,11 +74,12 @@
                     ★★★★☆
                 .aquarium-comments__wrapper__comment--bottom__time
                   行った時期：#{comment.visit_date}
-                - if comment.user.id == current_user.id
-                  .aquarium-comments__wrapper__comment--bottom__edit
-                    = link_to "編集", edit_group_comment_path(group_id: @group.id, id: comment.id)
-                  .aquarium-comments__wrapper__comment--bottom__delete
-                    = link_to "削除", group_comment_path(group_id: @group.id, id: comment.id), method: :delete
+                - if current_user.present?
+                  - if comment.user.id == current_user.id
+                    .aquarium-comments__wrapper__comment--bottom__edit
+                      = link_to "編集", edit_group_comment_path(group_id: @group.id, id: comment.id)
+                    .aquarium-comments__wrapper__comment--bottom__delete
+                      = link_to "削除", group_comment_path(group_id: @group.id, id: comment.id), method: :delete
     
   = render "top/side-bar"
 
