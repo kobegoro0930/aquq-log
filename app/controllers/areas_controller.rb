@@ -1,6 +1,9 @@
 class AreasController < ApplicationController
+
+  before_action :set_all
+
   def tokyo
-    @groups = Group.where(area: "東京都")
+    @groups = Group.where(area: "東京")
   end
 
   def kanagawa
@@ -16,5 +19,12 @@ class AreasController < ApplicationController
   end
 
   def tochigi
+  end
+
+  private
+
+  def set_all
+    @all_comments = Comment.all
+    @all_groups = Group.all
   end
 end
