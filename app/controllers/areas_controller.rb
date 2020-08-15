@@ -7,18 +7,23 @@ class AreasController < ApplicationController
   end
 
   def kanagawa
+    @groups = Group.where(area: "神奈川")
   end
 
   def chiba
+    @groups = Group.where(area: "千葉")
   end
 
   def ibaraki
+    @groups = Group.where(area: "茨城")
   end
 
   def saitama
+    @groups = Group.where(area: "埼玉")
   end
 
   def tochigi
+    @groups = Group.where(area: "栃木")
   end
 
   private
