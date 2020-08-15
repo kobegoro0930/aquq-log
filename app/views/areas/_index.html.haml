@@ -1,0 +1,16 @@
+= render "common/header"
+
+.groups-main
+  .groups-main--head
+    .groups-main--head__wrapper
+      %h1
+        - if @groups.present?
+          = @groups[0].area
+        の水族館
+      %p
+        口コミ評価が高い順にご紹介！
+
+    = render "common/lists"
+  = render "top/side-bar"
+
+= render "top/footer"

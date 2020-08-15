@@ -13,4 +13,15 @@ Rails.application.routes.draw do
   end
 
   resources :scores, only: [:index]
+
+  resources :areas do
+    collection do
+      get 'tokyo'
+      get 'kanagawa'
+      get 'chiba'
+      get 'ibaraki'
+      get 'saitama'
+      get 'tochigi'
+    end
+  end
 end

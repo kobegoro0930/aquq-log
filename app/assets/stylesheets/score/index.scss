@@ -3,6 +3,8 @@
   padding: 50px 60px 0;
 
   &--head {
+    width: calc(100% - 320px);
+    min-width: 600px;
 
     &__wrapper {
       margin-bottom: 25px;
