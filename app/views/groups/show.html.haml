@@ -28,11 +28,14 @@
           %i.far.fa-bookmark
           %span
             保存
-        = link_to new_group_comment_path(@group) do
-          .aquarium__head--right--bottom
-            %i.far.fa-comment-dots
+        -# = link_to new_group_comment_path(@group) do
+        #open.aquarium__head--right--bottom
+          %i.far.fa-comment-dots
+          - if current_user.present?
             %span
               口コミする
+          - else
+            = link_to "口コミする",  new_user_session_path
 
     .aquarium__images-wrapper
       .aquarium__images-wrapper__main
@@ -83,16 +86,7 @@
 
     #overlay
     #modal-window
-      .aquarium-comments__form
-        %h3 口コミの投稿
-        .form
-          = form_for [@group, @comment] do |f|
-            = f.text_field :title, class: 'form__title', placeholder: 'タイトルを入れてください'
-            = f.text_area :text, class: 'form__text', placeholder: '口コミ本文を入れてください'
-            = f.date_field :visit_date, class: 'form__date'
-            = f.submit '投稿', class: 'form__submit'
-        %button#close
-          閉じる
+      = render "comments/form"
     
   = render "top/side-bar"
 

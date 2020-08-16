@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   
-  before_action :set_group
+  before_action :set_all
 
   def new
     @comment = Comment.new
@@ -21,6 +21,8 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    @group = Group.find(params[:group_id])
+    @comments = @group.comments.includes(:user)
   end
 
   def update
@@ -44,7 +46,8 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:title, :text, :visit_date).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 
-  def set_group
-    @group = Group.find(params[:group_id])
+  def set_all
+    @all_comments = Comment.all
+    @all_groups = Group.all
   end
 end

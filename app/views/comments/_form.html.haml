@@ -1,8 +1,16 @@
-.aquarium-comments__form
-  %h3 口コミの投稿
-  .form
+.comment-form
+  .comment-form--head
+    %h3
+      = @group.name
+      %i.fas.fa-times#close
+  .comment-form__wrapper
     = form_for [@group, @comment] do |f|
-      = f.text_field :title, class: 'form__title', placeholder: 'タイトルを入れてください'
-      = f.text_area :text, class: 'form__text', placeholder: '口コミ本文を入れてください'
-      = f.date_field :visit_date, class: 'form__date'
-      = f.submit '投稿', class: 'form__submit'
+      .comment-form__wrapper__main
+        = f.text_field :title, class: 'comment-form__wrapper__title', placeholder: 'タイトルを入れてください'
+        = f.text_area :text, class: 'comment-form__wrapper__text', placeholder: '口コミ本文を入れてください'
+      .comment-form__wrapper--bottom
+        .comment-form__wrapper--bottom--left
+          %p
+            訪問日
+          = f.date_field :visit_date, class: 'comment-form__wrapper__date'
+        = f.submit '投稿', class: 'comment-form__wrapper__submit'

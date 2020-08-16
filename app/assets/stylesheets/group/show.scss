@@ -186,16 +186,6 @@
       border-right: 15px solid #c1ffff;
     }
   }
-
-  &__form {
-    padding-top: 25px;
-
-    .form {
-      &__title, &__text, &__date {
-        display: block;
-      }
-    }
-  }
 }
 
 #overlay {
@@ -206,16 +196,16 @@
   left: 0;
   background: rgba(0, 0, 0, 0.3);
   display: none;
-  z-index: 1
+  z-index: 1;
 }
 
 #modal-window {
-  width: 350px;
-  height: 350px;
+  width: 700px;
   position: fixed;
   border: 2px solid #D04255;
+  border-radius: 6px;
   background-color: #FFF;
   display: none; 
-  z-index: 2
+  z-index: 2;
 }
 
