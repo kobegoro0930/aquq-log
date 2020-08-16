@@ -28,11 +28,14 @@
           %i.far.fa-bookmark
           %span
             保存
-        = link_to new_group_comment_path(@group) do
-          .aquarium__head--right--bottom
-            %i.far.fa-comment-dots
+        -# = link_to new_group_comment_path(@group) do
+        #open.aquarium__head--right--bottom
+          %i.far.fa-comment-dots
+          - if current_user.present?
             %span
               口コミする
+          - else
+            = link_to "口コミする",  new_user_session_path
 
     .aquarium__images-wrapper
       .aquarium__images-wrapper__main
@@ -80,6 +83,10 @@
                       = link_to "編集", edit_group_comment_path(group_id: @group.id, id: comment.id)
                     .aquarium-comments__wrapper__comment--bottom__delete
                       = link_to "削除", group_comment_path(group_id: @group.id, id: comment.id), method: :delete
+
+    #overlay
+    #modal-window
+      = render "comments/form"
     
   = render "top/side-bar"
 

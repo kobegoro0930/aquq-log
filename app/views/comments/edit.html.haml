@@ -1,1 +1,107 @@
-= render 'form'
+= render "common/header"
+
+.groups_show-main
+
+  .aquarium
+    .aquarium__head
+      .aquarium__head--left
+        %p
+          = @group.catchphrase
+        %h2
+          = @group.name
+        .aquarium__head--left--bottom
+          %p.rate
+            ★★★★☆ 4.00
+          .number
+            %i.far.fa-comment-dots.icon
+            %span
+              10 件
+            %i.far.fa-bookmark.icon
+            %span
+              3 件
+      .aquarium__head--right
+        .aquarium__head--right--top
+          %i.far.fa-flag
+          %span
+            行った
+        .aquarium__head--right--middle
+          %i.far.fa-bookmark
+          %span
+            保存
+        -# = link_to new_group_comment_path(@group) do
+        #open.aquarium__head--right--bottom
+          %i.far.fa-comment-dots
+          - if current_user.present?
+            %span
+              口コミする
+          - else
+            = link_to "口コミする",  new_user_session_path
+
+    .aquarium__images-wrapper
+      .aquarium__images-wrapper__main
+        = image_tag @group.images[0].image.url, size: "600x450"
+      .aquarium__images-wrapper__sub
+        .aquarium__images-wrapper__sub--top
+          = image_tag @group.images[1].image.url, size: "184x138"
+        .aquarium__images-wrapper__sub--middle
+          = image_tag @group.images[2].image.url, size: "184x138"
+        .aquarium__images-wrapper__sub--bottom
+          = image_tag @group.images[3].image.url, size: "184x138"
+
+    .aquarium__explain
+      %h3
+        = @group.title
+      %p
+        = @group.text
+        
+    .aquarium-comments
+      %h3 口コミ
+      - @comments.each do |comment|
+        - if comment.nil?
+          .comment-none
+            コメントはまだありません
+        - else
+          .aquarium-comments__wrapper
+            .aquarium-comments__wrapper__user
+              .aquarium-comments__wrapper__user__image
+              .aquarium-comments__wrapper__user__name
+                = comment.user.name
+            .aquarium-comments__wrapper__comment
+              .aquarium-comments__wrapper__comment__title
+                = comment.title
+              .aquarium-comments__wrapper__comment__text
+                = comment.text
+              .aquarium-comments__wrapper__comment--bottom
+                .aquarium-comments__wrapper__comment--bottom__rate
+                  %p.rate
+                    ★★★★☆
+                .aquarium-comments__wrapper__comment--bottom__time
+                  行った時期：#{comment.visit_date}
+                - if current_user.present?
+                  - if comment.user.id == current_user.id
+                    .aquarium-comments__wrapper__comment--bottom__edit
+                      = link_to "編集", edit_group_comment_path(group_id: @group.id, id: comment.id)
+                    .aquarium-comments__wrapper__comment--bottom__delete
+                      = link_to "削除", group_comment_path(group_id: @group.id, id: comment.id), method: :delete
+
+    #edit-overlay
+    #edit-modal-window
+      .comment-form
+        .comment-form--head
+          %h3
+            = @group.name
+        .comment-form__wrapper
+          = form_for [@group, @comment] do |f|
+            .comment-form__wrapper__main
+              = f.text_field :title, class: 'comment-form__wrapper__title', placeholder: 'タイトルを入れてください'
+              = f.text_area :text, class: 'comment-form__wrapper__text', placeholder: '口コミ本文を入れてください'
+            .comment-form__wrapper--bottom
+              .comment-form__wrapper--bottom--left
+                %p
+                  訪問日
+                = f.date_field :visit_date, class: 'comment-form__wrapper__date'
+              = f.submit '変更', class: 'comment-form__wrapper__submit'
+    
+  = render "top/side-bar"
+
+= render "top/footer"

@@ -1,0 +1,20 @@
+#edit-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+#edit-modal-window {
+  width: 700px;
+  position: fixed;
+  top: calc(50vh - 175px);
+  left: calc(50vw - 350px);
+  border: 2px solid #D04255;
+  border-radius: 4px;
+  background-color: #FFF;
+  z-index: 2;
+}

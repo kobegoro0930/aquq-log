@@ -1,0 +1,96 @@
+.comment-form {
+    
+  &--head {
+    padding: 16px 0 12px;
+    text-align: center;
+    border-bottom: solid 1px #eeece4;
+
+    h3 {
+      font-size: 18px;
+      position: relative;
+
+      i {
+        position: absolute;
+        right: 20px;
+        font-size: 15px;
+        color: gray;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__wrapper {
+
+    &__title, &__text, &__date {
+      display: block;
+    }
+
+    &__title {
+      padding: 9px 10px 8px;
+      width: calc(100% - 2rem);
+      height: 39px;
+      font-size: 16px;
+      font-weight: bold;
+      border: 1px solid transparent;
+      box-shadow: none;
+    }
+
+    &__text {
+      margin-bottom: 12px;
+      padding: 10px;
+      width: calc(100% - 2rem);
+      height: 94px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      box-shadow: none;
+      resize: none;
+    }
+
+    ::placeholder {
+      color: silver;
+    }
+
+    &__main {
+      padding:  20px 25px 0;
+    }
+
+    &__date {
+      margin-left: 7px;
+    }
+
+    &__submit {
+      height: 27px;
+      width: 80px;
+      border: 1px solid #82ad24;
+      color: #fff;
+      background-color: #9c0;
+      background-image: linear-gradient(to bottom, #9c0,#82ad24);
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    &__submit:hover {
+      background-color: #ace600;
+      background-image: linear-gradient(to bottom, #ace600,#82ad24);
+    }
+
+    &--bottom {
+      padding: 12px 0;
+      background-color: #eeece4;
+      text-align: center;
+      position: relative;
+
+      &--left {
+        display: flex;
+        position: absolute;
+        left: 20px;
+
+        p {
+          line-height: 27px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
