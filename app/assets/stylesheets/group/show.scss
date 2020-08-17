@@ -115,15 +115,21 @@
     margin-bottom: 25px;
 
     &__user {
-      padding-right: 10px;
-      background-color: lightcyan;
+      padding: 0 20px 0 10px;
       display: block;
-      width: 180px;
+      width: 100px;
       height: 110px;
       text-align: center;
 
       &__name {
+        padding-top: 5px;
         font-size: 12px;
+      }
+
+      .comment-user-image {
+        height: 70px;
+        width: 70px;
+        border-radius: 4px;
       }
     }
 
@@ -164,7 +170,7 @@
         }
 
         &__edit {
-          padding-left: 300px;
+          padding-left: 350px;
           font-size: 11px;
         }
 
@@ -173,7 +179,6 @@
           font-size: 11px;
         }
       }
-
     }
 
     &__comment:before {
