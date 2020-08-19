@@ -52,6 +52,15 @@
 
     &__main {
       padding:  20px 25px 0;
+
+      &__rate {
+        padding-bottom: 10px;
+        
+        .rate-label {
+          padding-right: 10px;
+          font-size: 13px;
+        }
+      }
     }
 
     &__date {
