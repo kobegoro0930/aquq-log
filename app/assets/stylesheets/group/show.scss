@@ -6,17 +6,17 @@
 .aquarium__head {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: solid 1px #e1e1e1;
 
   &--left {
 
     p {
-      font-size: 14px;
+      font-size: 12px;
     }
 
     h2 {
-      padding: 7px 0 10px;
+      padding: 10px 0;
       font-size: 22px;
       font-weight: bold;
     }
@@ -24,10 +24,15 @@
     &--bottom {
       display: flex;
 
-      p {
+      img {
+        width: 24px;
+      }
+
+      .rate-number {
+        padding-left: 10px;
         font-size: 22px;
         font-weight: bold;
-        color: orange;
+        color: #E10000;
       }
     }
     
