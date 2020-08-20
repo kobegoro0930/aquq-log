@@ -159,24 +159,32 @@
         bottom: 10px;
 
         &__rate {
-          font-size: 13px;
+          display: flex;
+          font-size: 16px;
           color: orange;
+
+          .number{
+            padding-left: 10px;
+          }
         }
 
         &__time {
           padding-left: 20px;
           font-size: 11px;
           color: gray;
+          line-height: 18px;
         }
 
         &__edit {
-          padding-left: 350px;
+          padding-left: 320px;
           font-size: 11px;
+          line-height: 18px;
         }
 
         &__delete {
           padding-left: 10px;
           font-size: 11px;
+          line-height: 18px;
         }
       }
     }

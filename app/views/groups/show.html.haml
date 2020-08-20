@@ -75,7 +75,19 @@
               .aquarium-comments__wrapper__comment--bottom
                 .aquarium-comments__wrapper__comment--bottom__rate
                   %p.rate
-                    ★★★★☆
+                    .rate-star{id: "star_rate_#{comment.id}"}
+
+                    :javascript
+                      $('#star_rate_#{comment.id}').raty({
+                        size: 36,
+                        path: '/assets/',
+                        score: #{comment.rate},
+                        half: true,
+                        readOnly: true,
+                      });
+
+                  %p.number
+                    = comment.rate
                 .aquarium-comments__wrapper__comment--bottom__time
                   行った時期：#{comment.visit_date}
                 - if current_user.present?
