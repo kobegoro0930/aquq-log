@@ -9,6 +9,7 @@
     width: 100%;
 
     &__title {
+      padding-left: -20px;
       font-size: 20px;
       text-decoration: none;
       font-weight: 600;
@@ -16,18 +17,27 @@
 
     &__area {
       font-size: 12px;
-      margin-top: 10px;
+      margin: 10px 0 20px;
     }
 
     &__rate {
-      font-size: 20px;
-      margin-top: 20px;
-      color: orange;
-      font-weight: 600;
+
+      display: flex;
+
+      .rate-number {
+        padding-left: 10px;
+        font-size: 20px;
+        color: orange;
+        font-weight: 600;
+      }
+    }
+
+    img {
+      width: 22px;
     }
 
     &__comment-area {
-      margin-top: 20px;
+      margin-top: 15px;
       background-color: lavender;
       padding: 10px 10px;
       height: 80px;
