@@ -5,7 +5,20 @@
       %i.fas.fa-times#close
   .comment-form__wrapper
     = form_for [@group, @comment] do |f|
+      = f.hidden_field :group_id, { value: @group.id}
       .comment-form__wrapper__main
+        #star.comment-form__wrapper__main__rate
+          = f.label :rate,'評価 ', class: "rate-label"
+          = f.hidden_field :rate, id: :review_star
+
+        :javascript
+          $('#star').raty({
+            size: 36,
+            path: '/assets/',
+            scoreName: 'comment[rate]',
+            half: true,
+          });
+
         = f.text_field :title, class: 'comment-form__wrapper__title', placeholder: 'タイトルを入れてください'
         = f.text_area :text, class: 'comment-form__wrapper__text', placeholder: '口コミ本文を入れてください'
       .comment-form__wrapper--bottom

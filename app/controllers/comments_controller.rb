@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:title, :text, :visit_date).merge(user_id: current_user.id, group_id: params[:group_id])
+    params.require(:comment).permit(:title, :text, :visit_date, :rate).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 
   def set_all

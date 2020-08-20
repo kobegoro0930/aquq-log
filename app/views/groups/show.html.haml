@@ -11,14 +11,27 @@
           = @group.name
         .aquarium__head--left--bottom
           %p.rate
-            ★★★★☆ 4.00
+            .rate-star{id: "star_rate_#{@group.id}"}
+
+            :javascript
+              $('#star_rate_#{@group.id}').raty({
+                size: 36,
+                path: '/assets/',
+                half: true,
+                readOnly: true,
+                score: "#{@group.comments.average(:rate).to_f.round(2)}",
+              });
+
+            %p.rate-number
+              = @group.comments.average(:rate).to_f.round(2)
           .number
             %i.far.fa-comment-dots.icon
             %span
-              10 件
+              = @group.comments.count
+              件
             %i.far.fa-bookmark.icon
             %span
-              3 件
+              ＿＿ 件
       .aquarium__head--right
         .aquarium__head--right--top
           %i.far.fa-flag
@@ -75,7 +88,19 @@
               .aquarium-comments__wrapper__comment--bottom
                 .aquarium-comments__wrapper__comment--bottom__rate
                   %p.rate
-                    ★★★★☆
+                    .rate-star{id: "star_rate_#{comment.id}"}
+
+                    :javascript
+                      $('#star_rate_#{comment.id}').raty({
+                        size: 36,
+                        path: '/assets/',
+                        score: #{comment.rate},
+                        half: true,
+                        readOnly: true,
+                      });
+
+                  %p.number
+                    = comment.rate
                 .aquarium-comments__wrapper__comment--bottom__time
                   行った時期：#{comment.visit_date}
                 - if current_user.present?

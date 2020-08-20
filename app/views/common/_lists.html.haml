@@ -5,9 +5,22 @@
       = link_to "#{group.name}", group_path(group), class: "ranking__box__detail__title"
       %p.ranking__box__detail__area
         = group.area
-      %p.ranking__box__detail__rate
-        ☆☆☆☆☆ 4.00
+
       - if group.comments.present?
+        .ranking__box__detail__rate
+          .rate-star{id: "star_rate_#{group.id}"}
+
+            :javascript
+              $('#star_rate_#{group.id}').raty({
+                size: 36,
+                path: '/assets/',
+                half: true,
+                readOnly: true,
+                score: "#{group.comments.average(:rate).to_f.round(2)}",
+              });
+
+          .rate-number
+            = group.comments.average(:rate).to_f.round(2)
         .ranking__box__detail__comment-area
           %p.ranking__box__detail__comment-area__comment
             = group.comments[-1].title
