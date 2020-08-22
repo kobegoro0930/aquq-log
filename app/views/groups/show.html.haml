@@ -34,9 +34,8 @@
               ＿＿ 件
       .aquarium__head--right
         .aquarium__head--right--top
-          %i.far.fa-flag
-          %span
-            行った
+          %div{id: "went-#{@group.id}", class: "went-btn"}
+            = render "wents/went", group: @group
         .aquarium__head--right--middle
           %i.far.fa-bookmark
           %span

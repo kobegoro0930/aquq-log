@@ -16,7 +16,7 @@
     }
 
     h2 {
-      padding: 10px 0;
+      padding: 15px 0;
       font-size: 22px;
       font-weight: bold;
     }
@@ -48,17 +48,54 @@
   }
 
   &--right {
-    font-size: 14px;
-    padding-right: 50px;
+    display: flex;
+    padding: 10px 10px 10px 0;
+    height: 55px;
+    width: 307px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #c1ffff;
+    border-radius: 4px;
+
+    i {
+      color: indigo;
+    }
+
+    span {
+      padding-left: 10px;
+      font-weight: bold;
+      color: black;
+    }
 
     &--top, &--middle, &--bottom {
       display: flex;
-      padding-bottom: 12px;
+      margin-left: 10px;
+      padding: 10px;
+      height: 35px;
+      border: solid 1px skyblue;
+      border-radius: 4px;
+      background-color: white;
+      cursor: pointer;
 
-      span {
-        padding-left: 5px;
-        font-weight: bold;
+      .went-btn {
+        a {
+          text-decoration: none;
+        }
+
+        &__wrapper {
+          display: flex;
+        }
       }
+    }
+
+    &--middle {
+      span {
+        padding-left: 14px;
+      }
+    }
+
+    &--top:hover, &--middle:hover, &--bottom:hover {
+      opacity: 0.6;
     }
     
   }
