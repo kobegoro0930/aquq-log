@@ -14,7 +14,10 @@
         = link_to "#", class: "navi-link" do
           .user_show__main__navi__element__inner
             .navi-number
-              2
+              - if @user.wents.present?
+                = @user.wents.length
+              - else
+                0
             .navi-item
               行った水族館
       .user_show__main__navi__element
@@ -34,7 +37,14 @@
     .user_show__main__title
       %h1
         行った水族館
-    = render "common/lists"
+    - if @user.wents.nil?
+      %p.went-none
+        行った水族館はありません
+    - elsif @user.wents.length == 0
+      %p.went-none
+        行った水族館はありません
+    - else
+      = render "common/lists"
 
   = render "top/side-bar"
 
