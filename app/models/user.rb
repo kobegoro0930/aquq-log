@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   has_many :saves, dependent: :destroy
   has_many :wents, dependent: :destroy
+  has_many :went_groups, through: :wents, source: :group
   has_many :comments
 
   mount_uploader :image, ImageUploader

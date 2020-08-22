@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @groups = Group.order("id DESC")
+    @groups = current_user.went_groups
   end
 
   private
