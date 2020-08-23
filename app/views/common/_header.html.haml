@@ -1,10 +1,11 @@
 .common-header
   .common-header--top
     .common-header--top__group-name
-      %p
-        = @group.name
-        = "-"
-        = @group.area
+      - if @group.present?
+        %p
+          = @group.name
+          = "-"
+          = @group.area
     .common-header--top__links
       = link_to "特徴と使い方", "＃", class: "common-header--top__links__feature"
       - if user_signed_in?
