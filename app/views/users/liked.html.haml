@@ -1,1 +1,54 @@
-hello world
+= render "common/header"
+
+.user_show
+  .user_show__main
+    .user_show__main--head
+      .user_show__main--head__image
+        = image_tag @user.image.url, class: "account-image"
+      .user_show__main--head__name
+        %p
+          #{@user.name}さん
+        = link_to "▶︎ アカウントの編集", edit_user_registration_path
+    .user_show__main__navi
+      .user_show__main__navi__element
+        = link_to user_path(id: current_user.id), class: "navi-link" do
+          .user_show__main__navi__element__inner
+            .navi-number
+              - if @user.wents.present?
+                = @user.wents.length
+              - else
+                0
+            .navi-item
+              行った水族館
+      .user_show__main__navi__element
+        = link_to liked_user_path(id: params[:id]), class: "navi-link" do
+          .user_show__main__navi__element__inner
+            .navi-number
+              - if @user.likes.present?
+                = @user.likes.length
+              - else
+                0
+            .navi-item
+              保存した水族館
+      .user_show__main__navi__element
+        = link_to "#", class: "navi-link" do
+          .user_show__main__navi__element__inner.element-last
+            .navi-number
+              2
+            .navi-item
+              口コミした数
+    .user_show__main__title
+      %h1
+        保存した水族館
+    - if @user.likes.nil?
+      %p.went-none
+        保存した水族館はありません
+    - elsif @user.likes.length == 0
+      %p.went-none
+        保存した水族館はありません
+    - else
+      = render "common/lists"
+
+  = render "top/side-bar"
+
+= render "top/footer"

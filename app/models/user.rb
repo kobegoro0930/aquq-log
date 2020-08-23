@@ -12,6 +12,7 @@ class User < ApplicationRecord
   # }
 
   has_many :likes, dependent: :destroy
+  has_many :like_groups, through: :likes, source: :group
   has_many :wents, dependent: :destroy
   has_many :went_groups, through: :wents, source: :group
   has_many :comments

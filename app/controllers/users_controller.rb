@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def liked
-    
+    @user = User.find(params[:id])
+    @groups = current_user.like_groups
   end
 
   private
