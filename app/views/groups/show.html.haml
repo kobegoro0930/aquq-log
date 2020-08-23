@@ -37,10 +37,8 @@
           %div{id: "went-#{@group.id}", class: "went-btn"}
             = render "wents/went", group: @group
         .aquarium__head--right--middle
-          %i.far.fa-bookmark
-          %span
-            保存
-        -# = link_to new_group_comment_path(@group) do
+          %div{id: "like-#{@group.id}", class: "like-btn"}
+            = render "likes/like", group: @group
         #open.aquarium__head--right--bottom
           %i.far.fa-comment-dots
           - if current_user.present?

@@ -51,7 +51,7 @@
     display: flex;
     padding: 10px 10px 10px 0;
     height: 55px;
-    width: 307px;
+    width: 315px;
     font-size: 13px;
     font-weight: bold;
     background-color: #c1ffff;
@@ -77,13 +77,9 @@
       background-color: white;
       cursor: pointer;
 
-      .went-btn {
+      .went-btn, .like-btn {
         a {
           text-decoration: none;
-        }
-
-        &__wrapper {
-          display: flex;
         }
       }
     }

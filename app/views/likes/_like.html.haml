@@ -1,0 +1,14 @@
+- if Like.find_by(user_id: current_user.id, group_id: group.id)
+  = link_to group_like_path(group_id: group.id, id: group.likes[0].id), method: :delete, remote: true do
+    .like-btn__wrapper
+      %i.fas.fa-bookmark
+      %span
+        保存
+
+- else
+  = link_to group_likes_path(group), method: :post, remote: true do
+    .like-btn__wrapper
+      %i.far.fa-bookmark
+      %span
+        保存
+        
