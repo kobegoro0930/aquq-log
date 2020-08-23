@@ -46,6 +46,13 @@ class GroupsController < ApplicationController
     redirect_to groups_path
   end
 
+  def search
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, :catchphrase, :title, :text, :area, images_attributes: [:image])
