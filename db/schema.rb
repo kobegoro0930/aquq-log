@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_033159) do
+ActiveRecord::Schema.define(version: 2020_08_23_035803) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id"
@@ -52,6 +52,24 @@ ActiveRecord::Schema.define(version: 2020_08_22_033159) do
     t.index ["group_id"], name: "index_images_on_group_id"
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_likes_on_group_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "saves", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_saves_on_group_id"
+    t.index ["user_id"], name: "index_saves_on_user_id"
+  end
+
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id"
     t.bigint "tag_id"
@@ -90,6 +108,10 @@ ActiveRecord::Schema.define(version: 2020_08_22_033159) do
   add_foreign_key "group_tags", "groups"
   add_foreign_key "group_tags", "tags"
   add_foreign_key "images", "groups"
+  add_foreign_key "likes", "groups"
+  add_foreign_key "likes", "users"
+  add_foreign_key "saves", "groups"
+  add_foreign_key "saves", "users"
   add_foreign_key "tags", "groups"
   add_foreign_key "tags", "tags"
   add_foreign_key "wents", "groups"
