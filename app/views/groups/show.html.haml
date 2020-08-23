@@ -31,7 +31,8 @@
               件
             %i.far.fa-bookmark.icon
             %span
-              ＿＿ 件
+              = @group.likes.count
+              件
       .aquarium__head--right
         .aquarium__head--right--top
           %div{id: "went-#{@group.id}", class: "went-btn"}
