@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @groups = current_user.went_groups
   end
 
+  def liked
+    
+  end
+
   private
 
   def set_all

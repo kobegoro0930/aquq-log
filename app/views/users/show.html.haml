@@ -21,7 +21,7 @@
             .navi-item
               行った水族館
       .user_show__main__navi__element
-        = link_to "#", class: "navi-link" do
+        = link_to liked_user_path(id: params[:id]), class: "navi-link" do
           .user_show__main__navi__element__inner
             .navi-number
               - if @user.likes.present?

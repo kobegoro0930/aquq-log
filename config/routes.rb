@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
   }
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      get 'liked'
+    end
+  end
   
   resources :groups do
     resources :comments, only: [:new, :create, :edit, :update, :destroy]
