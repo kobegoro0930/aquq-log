@@ -39,13 +39,13 @@
               口コミした数
     .user_show__main__title
       %h1
-        行った水族館
-    - if @user.wents.nil?
+        保存した水族館
+    - if @user.likes.nil?
       %p.went-none
-        行った水族館はありません
-    - elsif @user.wents.length == 0
+        保存した水族館はありません
+    - elsif @user.likes.length == 0
       %p.went-none
-        行った水族館はありません
+        保存した水族館はありません
     - else
       = render "common/lists"
 

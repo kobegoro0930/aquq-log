@@ -7,6 +7,11 @@ class UsersController < ApplicationController
     @groups = current_user.went_groups
   end
 
+  def liked
+    @user = User.find(params[:id])
+    @groups = current_user.like_groups
+  end
+
   private
 
   def set_all
