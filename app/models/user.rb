@@ -11,7 +11,7 @@ class User < ApplicationRecord
   #   with: /\A[a-zA-Z0-9]+\z/
   # }
 
-  has_many :saves, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :wents, dependent: :destroy
   has_many :went_groups, through: :wents, source: :group
   has_many :comments
