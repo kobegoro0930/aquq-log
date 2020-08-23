@@ -4,19 +4,29 @@
 
   &--top {
     display:  flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+
+    &__group-name {
+      height: 20px;
+
+      p {
+        color: #595960;
+        font-size: 11px;
+        line-height: 20px;
+      }
+    }
 
     &__links {
-      height: 30px;
+      height: 20px;
       
       a {
         text-decoration: none;
         vertical-align: middle;
-        font-size: 14px;
-        line-height: 30px;
+        font-size: 12.5px;
+        line-height: 20px;
       }
 
-      &__login, &__logout {
+      &__login, &__logout, &__mypage {
         padding-left: 10px;
       }
 

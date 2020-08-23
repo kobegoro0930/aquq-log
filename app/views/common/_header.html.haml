@@ -1,8 +1,14 @@
 .common-header
   .common-header--top
+    .common-header--top__group-name
+      %p
+        = @group.name
+        = "-"
+        = @group.area
     .common-header--top__links
       = link_to "特徴と使い方", "＃", class: "common-header--top__links__feature"
       - if user_signed_in?
+        = link_to "マイページ", "/users/#{current_user.id}", class: "common-header--top__links__mypage"
         = link_to "ログアウト", "/users/sign_out", method: :delete, class: "common-header--top__links__logout"
       - else
         = link_to "ログイン", "/users/sign_in", class: "common-header--top__links__login"

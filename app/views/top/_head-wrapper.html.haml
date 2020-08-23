@@ -5,6 +5,7 @@
     .header__right-items
       = link_to "特徴と使い方", groups_path, class: "header__right-items__feature"
       - if user_signed_in?
+        = link_to "マイページ", "/users/#{current_user.id}", class: "header__right-items__mypage"
         = link_to "ログアウト", "/users/sign_out", method: :delete, class: "header__right-items__logout"
       - else
         = link_to "ログイン", "/users/sign_in", class: "header__right-items__login"
