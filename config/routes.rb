@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root "top#index"
 
   devise_for :users, controllers: {
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   resources :groups do
     resources :comments, only: [:new, :create, :edit, :update, :destroy]
     resources :wents, only: [:create, :destroy]
+    resources :likes, only: [:create, :destroy]
   end
 
   resources :scores, only: [:index]
