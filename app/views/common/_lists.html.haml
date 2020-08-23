@@ -32,10 +32,16 @@
           コメントはまだありません
     .ranking__box--right
       %i.far.fa-flag.ranking__box--right__gone
-        5
+        - if group.wents.present?
+          = group.wents.length
+        - else
+          0
       .explain-gone
         "行った"の数
       %i.far.fa-bookmark.ranking__box--right__save
-        3
+        - if group.likes.present?
+          = group.likes.length
+        - else
+          0
       .explain-save
         "保存"の数
