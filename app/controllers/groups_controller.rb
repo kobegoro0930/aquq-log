@@ -47,6 +47,7 @@ class GroupsController < ApplicationController
   end
 
   def search
+    @input = Group.search(params[:keyword])
     respond_to do |format|
       format.html
       format.json
