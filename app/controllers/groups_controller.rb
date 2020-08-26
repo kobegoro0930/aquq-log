@@ -47,11 +47,13 @@ class GroupsController < ApplicationController
   end
 
   def search
-    @input = Group.search(params[:keyword])
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    # binding.pry
+    @groups = Group.search(@search_params)
+    # @input = Group.search(params[:keyword])
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end
   end
 
   private
@@ -63,4 +65,5 @@ class GroupsController < ApplicationController
     @all_comments = Comment.all
     @all_groups = Group.all
   end
+
 end

@@ -3,7 +3,7 @@ class TopController < ApplicationController
 
   def index
     @groups = Group.last(5)
-    @comments = Comment.all
+    @search_params = group_search_params
   end
 
   private
@@ -12,4 +12,9 @@ class TopController < ApplicationController
     @all_comments = Comment.all
     @all_groups = Group.all
   end
+
+  def group_search_params
+    params.fetch(:search, {}).permit(:area, :text)
+  end
+  
 end

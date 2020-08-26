@@ -19,13 +19,13 @@
       %h2
         エリア、キーワードから探す
     .search-form__search-box
-      = form_with(url: search_groups_path, local: true, method: :get, class: "in-search-form") do |f|
+      = form_with(scope: :search, url: search_groups_path, local: true, method: :get, class: "in-search-form") do |f|
         .search-form__search-box__wrapper
           .search-form__search-box__wrapper__input-area
-            = f.text_field :text, id: 'area',class: "search-input", placeholder: 'エリア [ 例：東京 ] '
+            = f.text_field :area, value: @search_params[:area], id: 'area', class: "search-input", placeholder: 'エリア [ 例：東京 ]'
           .search-form__search-box__wrapper__input-keyword
-            = f.text_field :text, id: 'keyword', placeholder: 'キーワード [ 例：ペンギン ] '
-          .search-form__search-box__wrapper__submit-btn
+            = f.text_field :text, value: @search_params[:text], id: 'text', placeholder: 'キーワード [ 例：ペンギン ] '
+          .search-form__search-box__wrapper__submit-btn                                                                   
             = f.submit "検  索", class: 'btn'
 
 
