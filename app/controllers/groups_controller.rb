@@ -46,6 +46,16 @@ class GroupsController < ApplicationController
     redirect_to groups_path
   end
 
+  def search
+    @search_product = Group.ransack(params[:q]) 
+    @groups = @search_product.result
+    # @input = Group.search(params[:keyword]) 
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, :catchphrase, :title, :text, :area, images_attributes: [:image])
@@ -55,4 +65,5 @@ class GroupsController < ApplicationController
     @all_comments = Comment.all
     @all_groups = Group.all
   end
+
 end

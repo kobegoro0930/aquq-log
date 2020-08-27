@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create, :edit, :update, :destroy]
     resources :wents, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
   end
 
   resources :scores, only: [:index]

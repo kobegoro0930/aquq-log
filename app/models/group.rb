@@ -10,4 +10,11 @@ class Group < ApplicationRecord
 
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
+
+  # def self.search(area,text)
+  #   return Group.all unless search
+  #   Group.where('area LIKE(?)', "%#{area}%").where('text LIKE(?)', "%#{text}%")
+  # end
+
+  
 end
