@@ -55,7 +55,7 @@
     display: flex;
     padding: 10px 10px 10px 0;
     height: 55px;
-    width: 315px;
+    width: 305px;
     font-size: 13px;
     font-weight: bold;
     background-color: #c1ffff;
@@ -66,7 +66,7 @@
     }
 
     span {
-      padding-left: 10px;
+      padding-left: 5px;
       font-weight: bold;
       color: black;
     }
@@ -88,14 +88,18 @@
       }
     }
 
-    &--middle {
-      span {
-        padding-left: 14px;
-      }
-    }
+    // &--middle {
+    //   span {
+    //     padding-left: 14px;
+    //   }
+    // }
 
     &--top:hover, &--middle:hover, &--bottom:hover {
       opacity: 0.6;
+    }
+
+    .show-page_no-entry {
+      text-decoration: none;
     }
     
   }

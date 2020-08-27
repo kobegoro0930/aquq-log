@@ -35,18 +35,34 @@
               件
       .aquarium__head--right
         .aquarium__head--right--top
-          %div{id: "went-#{@group.id}", class: "went-btn"}
-            = render "wents/went", group: @group
-        .aquarium__head--right--middle
-          %div{id: "like-#{@group.id}", class: "like-btn"}
-            = render "likes/like", group: @group
-        #open.aquarium__head--right--bottom
-          %i.far.fa-comment-dots
           - if current_user.present?
-            %span
-              口コミする
+            %div{id: "went-#{@group.id}", class: "went-btn"}
+              = render "wents/went", group: @group
           - else
-            = link_to "口コミする",  new_user_session_path
+            = link_to new_user_session_path, class: "show-page_no-entry" do
+              %i.far.fa-flag
+              %span
+                行った
+        .aquarium__head--right--middle
+          - if current_user.present?
+            %div{id: "like-#{@group.id}", class: "like-btn"}
+              = render "likes/like", group: @group
+          - else
+            = link_to new_user_session_path, class: "show-page_no-entry" do
+              %i.far.fa-flag
+              %span
+                保存
+        .aquarium__head--right--bottom
+          - if current_user.present?
+            #open
+              %i.far.fa-comment-dots
+              %span
+                口コミする
+          - else
+            = link_to new_user_session_path, class: "show-page_no-entry" do
+              %i.far.fa-comment-dots
+              %span
+                口コミする
 
     .aquarium__images-wrapper
       .aquarium__images-wrapper__main
