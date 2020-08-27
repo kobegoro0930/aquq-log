@@ -3,7 +3,7 @@ class TopController < ApplicationController
 
   def index
     @groups = Group.last(5)
-    @search_params = group_search_params
+    @q = Group.ransack(params[:q])
   end
 
   private
@@ -13,8 +13,8 @@ class TopController < ApplicationController
     @all_groups = Group.all
   end
 
-  def group_search_params
-    params.fetch(:search, {}).permit(:area, :text)
+  def search_params
+    params.require(:q).permit(:area, :text)
   end
-  
+
 end

@@ -47,9 +47,9 @@ class GroupsController < ApplicationController
   end
 
   def search
-    # binding.pry
-    @groups = Group.search(@search_params)
-    # @input = Group.search(params[:keyword])
+    @search_product = Group.ransack(params[:q]) 
+    @groups = @search_product.result
+    # @input = Group.search(params[:keyword]) 
     # respond_to do |format|
     #   format.html
     #   format.json
