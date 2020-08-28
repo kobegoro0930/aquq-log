@@ -12,10 +12,10 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to group_path(@comment.group.id)
     else
-      render :new
+      # @group = Group.find(params[:group_id])
       # @comments = @group.comments.includes(:user)
-      # flash.now[:alert] = 'メッセージを入力してください。'
-      # render group_path(@group)
+      flash[:alert] = "コメントの投稿に失敗しました"
+      redirect_to group_path(@comment.group.id)
     end
   end
 
