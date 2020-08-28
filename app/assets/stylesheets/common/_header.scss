@@ -38,7 +38,12 @@
     width: 100%;
     align-items: center;
 
+    &__logo {
+      display: flex;
+    }
+
     a {
+      padding-left: 5px;
       text-decoration: none;
       color: indigo;
       font-weight: 600;
@@ -47,7 +52,7 @@
     }
 
     .search-form {
-      margin-left: 100px;
+      margin-left: 80px;
       height: 35px;
       width: calc(100% - 220px);
       border-radius: 4px;
