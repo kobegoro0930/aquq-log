@@ -7,7 +7,7 @@
           = "-"
           = @group.area
     .common-header--top__links
-      = link_to "特徴と使い方", "＃", class: "common-header--top__links__feature"
+      = link_to "アプリについて", "https://github.com/kobegoro0930/aquq-log", class: "common-header--top__links__feature"
       - if user_signed_in?
         = link_to "マイページ", "/users/#{current_user.id}", class: "common-header--top__links__mypage"
         = link_to "ログアウト", "/users/sign_out", method: :delete, class: "common-header--top__links__logout"
