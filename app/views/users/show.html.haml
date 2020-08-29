@@ -4,7 +4,10 @@
   .user_show__main
     .user_show__main--head
       .user_show__main--head__image
-        = image_tag @user.image.url, class: "account-image"
+        - if @user.image.url.present?
+          = image_tag @user.image.url, class: "account-image"
+        - else
+          = image_tag "member_photo_noimage_thumb.png", class: "account-image"
       .user_show__main--head__name
         %p
           #{@user.name}さん
