@@ -1,3 +1,9 @@
+.alert {
+  background-color: tomato;
+  padding: 10px 20px;
+  font-size: 13px;
+}
+
 .groups_show-main {
   display: flex;
   padding: 50px 60px 0;
@@ -88,12 +94,6 @@
       }
     }
 
-    // &--middle {
-    //   span {
-    //     padding-left: 14px;
-    //   }
-    // }
-
     &--top:hover, &--middle:hover, &--bottom:hover {
       opacity: 0.6;
     }
@@ -101,7 +101,6 @@
     .show-page_no-entry {
       text-decoration: none;
     }
-    
   }
 }
 
@@ -164,7 +163,6 @@
       padding: 0 20px 0 10px;
       display: block;
       width: 100px;
-      height: 110px;
       text-align: center;
 
       &__name {
@@ -201,8 +199,6 @@
       &--bottom {
         display: flex;
         width: 100%;
-        position: absolute;
-        bottom: 10px;
 
         &__rate {
           display: flex;
@@ -222,7 +218,7 @@
         }
 
         &__edit {
-          padding-left: 320px;
+          padding-left: 280px;
           font-size: 11px;
           line-height: 18px;
         }
