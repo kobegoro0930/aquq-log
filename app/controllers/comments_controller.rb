@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     else
       # @group = Group.find(params[:group_id])
       # @comments = @group.comments.includes(:user)
-      flash[:alert] = "コメントの投稿に失敗しました"
+      flash[:alert] = "コメントの投稿に失敗しました。入力内容をご確認ください。"
       redirect_to group_path(@comment.group.id)
     end
   end
