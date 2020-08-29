@@ -23,7 +23,7 @@
             = group.comments.average(:rate).to_f.round(2)
         .ranking__box__detail__comment-area
           %p.ranking__box__detail__comment-area__comment
-            = group.comments[-1].text
+            = truncate(group.comments[-1].text, :length => 90)
           %p.ranking__box__detail__comment-area__member
             by
             = group.comments[-1].user.name
