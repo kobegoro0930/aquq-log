@@ -45,6 +45,8 @@
       color: #fff;
       background-color: #ccc;
       font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
     }
   }
 
@@ -80,6 +82,7 @@
     text-align: center;
     border: none;
     border-radius: 2px;
+    cursor: pointer;
   }
 
   input[type='submit'] {
