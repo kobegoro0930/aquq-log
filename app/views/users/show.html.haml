@@ -4,7 +4,10 @@
   .user_show__main
     .user_show__main--head
       .user_show__main--head__image
-        = image_tag @user.image.url, class: "account-image"
+        - if @user.image.url.present?
+          = image_tag @user.image.url, class: "account-image"
+        - else
+          = image_tag "member_photo_noimage_thumb.png", class: "account-image"
       .user_show__main--head__name
         %p
           #{@user.name}さん
@@ -34,7 +37,7 @@
         = link_to "#", class: "navi-link" do
           .user_show__main__navi__element__inner.element-last
             .navi-number
-              2
+              = @user.comments.length
             .navi-item
               口コミした数
     .user_show__main__title
