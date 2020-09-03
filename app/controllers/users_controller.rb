@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_action :set_all
   
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     @groups = current_user.went_groups
   end
 
   def liked
-    @user = User.find(params[:id])
+    @user = current_user
     @groups = current_user.like_groups
   end
 
