@@ -6,3 +6,7 @@ ja:
       user:
         name: 名前
         email: メールアドレス
+  devise:
+    sessions:
+        signed_in: ''
+        signed_out: ''
