@@ -6,7 +6,7 @@ lock '3.14.1'
 set :application, 'aquq-log'
 
 # どのリポジトリからアプリをpullするかを指定する
-set :repo_url,  'git@github.com:kogegoro0930/aquq-log.git'
+set :repo_url,  'git@github.com:kobegoro0930/aquq-log.git'
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
