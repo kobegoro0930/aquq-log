@@ -113,7 +113,9 @@
                     :javascript
                       $('#star_rate_#{comment.id}').raty({
                         size: 36,
-                        path: '/assets/',
+                        starOff: "#{asset_path('star-off.png')}",
+                        starOn: "#{asset_path('star-on.png')}",
+                        starHalf: "#{asset_path('star-half.png')}",
                         score: #{comment.rate},
                         half: true,
                         readOnly: true,
