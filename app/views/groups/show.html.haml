@@ -89,11 +89,12 @@
         
     .aquarium-comments
       %h3 口コミ
-      - @comments.each do |comment|
-        - if comment.nil?
-          .comment-none
-            コメントはまだありません
-        - else
+
+      - unless @comments.present?
+        .comment-none
+          = " 口コミはまだありません"
+      - else
+        - @comments.each do |comment|
           .aquarium-comments__wrapper
             .aquarium-comments__wrapper__user
               .aquarium-comments__wrapper__user__image
