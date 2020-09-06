@@ -1,4 +1,6 @@
-# 水族館ログ
+## :penguin: アプリ名
+### 水族館ログ<br>
+<br>
 
 ## :penguin: 概要 
 食べログを参考に作成したWEBアプリケーションです。<br>
@@ -46,8 +48,8 @@
 
 ## :penguin: Author
 <a href="https://github.com/kobegoro0930"><img src="https://avatars3.githubusercontent.com/u/62911575?s=460&v=4" width="50px"></a><br>
-<a href="https://github.com/kobegoro0930">Github</a>
-<a href="https://kobegoro.hatenablog.com/archive">開発メモ(Blog)</a><br>
+- <a href="https://github.com/kobegoro0930">Github</a><br>
+- <a href="https://kobegoro.hatenablog.com/archive">開発メモ(Blog)</a><br>
 <br>
 
 ## :penguin: 開発にあたって
@@ -57,4 +59,4 @@
 <br>
 
 ## :penguin: ERD
-![個人アプリ_ERD_2](https://user-images.githubusercontent.com/62911575/87666816-44bca880-c7a4-11ea-8959-0440de0b6395.png)
+![個人アプリ_ERD_2 (1)](https://user-images.githubusercontent.com/62911575/92324903-02fffe00-f081-11ea-8d18-6e41622a1819.png)
