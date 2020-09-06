@@ -20,7 +20,9 @@
             :javascript
               $('#star_rate_#{@group.id}').raty({
                 size: 36,
-                path: asset_path,
+                starOff: "#{asset_path('star-off.png')}",
+                starOn: "#{asset_path('star-on.png')}",
+                starHalf: "#{asset_path('star-half.png')}",
                 half: true,
                 readOnly: true,
                 score: "#{@group.comments.average(:rate).to_f.round(2)}",
