@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   # deviseコントローラーにストロングパラメータを追加
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  before_action :set_all
+
   protected
 
   def configure_permitted_parameters
@@ -17,6 +19,16 @@ class ApplicationController < ActionController::Base
   # ログイン後、rootに移動する
   def after_sign_in_path_for(resource)
     root_path
+  end
+
+  def set_all
+    @all_comments = Comment.all
+    @all_groups = Group.all
+    @q = Group.ransack(params[:q])
+  end
+
+  def search_params
+    params.require(:q).permit(:area, :text)
   end
 
 end
