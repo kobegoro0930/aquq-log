@@ -7,7 +7,6 @@
 .groups_show-main {
   display: flex;
   padding: 50px 60px 0;
-  // width: calc(100% - 320px);
 }
 
 .aquarium__head {
@@ -179,7 +178,7 @@
     }
 
     &__comment {
-      width: calc(100% - 100px);
+      width: 100%;
       background-color: #c1ffff;
       padding: 10px 20px;
       margin-left: 10px;
