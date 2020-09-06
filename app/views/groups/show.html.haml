@@ -20,7 +20,7 @@
             :javascript
               $('#star_rate_#{@group.id}').raty({
                 size: 36,
-                path: '/assets/',
+                path: '/public/assets/',
                 half: true,
                 readOnly: true,
                 score: "#{@group.comments.average(:rate).to_f.round(2)}",
