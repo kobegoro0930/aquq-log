@@ -16,21 +16,89 @@
         = @all_comments.length
   .side-bar__login
     .side-bar__login__inner
-      %h3
-        新規会員登録
-      %p.side-bar__login__inner__explain
-        ログインすると、コメントや画像の投稿、行った水族館を管理できるようになります。
-      %p.side-bar__login__inner__friendly
-        ※かんたんログインもございますので、お気軽にお試しください。
-      .side-bar__login__inner__btn
-        .side-bar__login__inner__btn__wrapper
-          %a{ href: "/users/sign_in" }
-            ログイン
+
+      - if user_signed_in?
+        .current_user-exist
+          .side-bar__login__inner--head
+            .side-bar__login__inner--head__image
+              - if current_user.image?
+                = image_tag current_user.image.url, class: "account-image"
+              - else
+                = image_tag "member_photo_noimage_thumb.png", class: "account-image"
+            .side-bar__login__inner--head__name
+              = current_user.name
+          = link_to user_path(id: current_user.id), class: "navi-link" do
+            .side-bar__login__inner__went
+              %p
+                = "行った水族館"
+              %p
+                = "#{current_user.wents.length}"
+          = link_to liked_user_path(id: current_user.id), class: "navi-link" do
+            .side-bar__login__inner__liked
+              %p
+                = "保存した水族館"
+              %p
+                = "#{current_user.likes.length}"
+                
+      - else
+        %h3
+          新規会員登録
+        %p.side-bar__login__inner__explain
+          ログインすると、コメントや画像の投稿、行った水族館を管理できるようになります。
+        %p.side-bar__login__inner__friendly
+          ※かんたんログインもございますので、お気軽にお試しください。
+        .side-bar__login__inner__btn
+          .side-bar__login__inner__btn__wrapper
+            %a{ href: "/users/sign_in" }
+              ログイン
+
   .side-bar__news
     .side-bar__news__inner
-      %h3
-        水族館ログからのお知らせ
-      %p.side-bar__news__inner__time
-        2020.06.04
-      %p.side-bar__news__inner__text
-        水族館ログ（関東）を公開しました。順次全国版へのリニューアルを行ってまいります。
+
+      - if user_signed_in?
+        - if current_user.like_groups.present?
+          .side-bar__liked-groups
+            %h3
+              保存した水族館
+            - current_user.like_groups.last(3).each do |group|
+              = link_to group_path(group), class: "detail__title" do
+                .side-bar__liked-groups__group
+                  .side-bar__liked-groups__group__image
+                    = image_tag group.images[4].image.url, :size =>'50x50'
+                  .side-bar__liked-groups__group--right
+                    .side-bar__liked-groups__group--right__name
+                      = group.name
+                    .side-bar__liked-groups__group--right__area
+                      = group.area
+                    .side-bar__liked-groups__group--right__rate
+                      .rate-star{id: "star_rate_#{group.name}"}
+
+                        :javascript
+                          $('#star_rate_#{group.name}').raty({
+                            size: 36,
+                            starOff: "#{asset_path('star-off.png')}",
+                            starOn: "#{asset_path('star-on.png')}",
+                            starHalf: "#{asset_path('star-half.png')}",
+                            half: true,
+                            readOnly: true,
+                            score: "#{group.comments.average(:rate).to_f.round(2)}",
+                          });
+
+                      .rate-number
+                        = group.comments.average(:rate).to_f.round(2)
+            .liked-index
+              = link_to "▶︎保存した水族館一覧へ", liked_user_path(id: current_user.id)
+        - else
+          .side-bar__liked-groups
+            %h3
+              保存した水族館
+            %span
+              = "保存した水族館はありません"
+
+      - else
+        %h3
+          水族館ログからのお知らせ
+        %p.side-bar__news__inner__time
+          2020.09.06
+        %p.side-bar__news__inner__text
+          水族館ログ（関東版）を公開しました。今後の改修予定につきましては、決まり次第ご連絡いたします。
