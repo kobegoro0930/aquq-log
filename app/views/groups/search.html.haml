@@ -1,7 +1,30 @@
-= link_to "TOP", root_path
+= render "common/header"
 
-- @groups.each do |group|
-  .group-name
-    = group.name
-  .group-text
-    = group.text
+.groups-main
+  .groups-main--head
+    .groups-main--head__wrapper
+
+      - if params[:q]['area_cont'] == "" && params[:q]['name_or_catchphrase_or_title_or_text_cont'] == ""
+        %h1
+          = "検索キーワードがありません。"
+        %p
+          = "エリア・キーワードで検索してみましょう。"
+
+      - elsif @groups.present?
+        %h1
+          = "「#{params[:q]['area_cont']}」「#{params[:q]['name_or_catchphrase_or_title_or_text_cont']}」の検索結果："
+          = @groups.count
+          件
+        %p
+          = "該当の水族館をご紹介！"
+
+      - else
+        %h1
+          = "「#{params[:q]['area_cont']}」「#{params[:q]['name_or_catchphrase_or_title_or_text_cont']}」で一致する水族館はありませんでした"
+        %p
+          = "ヒント：”キーワード”は水族館の名称や説明文章などから検索します。"
+
+    = render "common/lists"
+  = render "top/side-bar"
+
+= render "top/footer"
