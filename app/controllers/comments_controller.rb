@@ -49,5 +49,10 @@ class CommentsController < ApplicationController
   def set_all
     @all_comments = Comment.all
     @all_groups = Group.all
+    @q = Group.ransack(params[:q])
+  end
+
+  def search_params
+    params.require(:q).permit(:area, :text)
   end
 end
