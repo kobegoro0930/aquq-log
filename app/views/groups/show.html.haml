@@ -98,7 +98,10 @@
           .aquarium-comments__wrapper
             .aquarium-comments__wrapper__user
               .aquarium-comments__wrapper__user__image
-                = image_tag comment.user.image.url, class: "comment-user-image"
+                - if comment.user.image.url.present?
+                  = image_tag comment.user.image.url, class: "comment-user-image"
+                - else
+                  = image_tag "member_photo_noimage_thumb.png", class: "comment-user-image"
               .aquarium-comments__wrapper__user__name
                 = comment.user.name
             .aquarium-comments__wrapper__comment
