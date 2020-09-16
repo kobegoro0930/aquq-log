@@ -5,4 +5,5 @@ class Comment < ApplicationRecord
   validates :title, presence: true, length: { maximum: 20 }
   validates :text, presence: true, length: { maximum: 140 }
   validates :visit_date, presence: true
+  validates :rate, presence: true
 end
